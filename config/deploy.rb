@@ -7,6 +7,7 @@ set :repo_url,        'git@github.com:0910/proyectual.git'
 set :application,     'proyectual'
 set :user,            'ubuntu'
 set :rbenv_ruby, '2.2.3'
+set :rbenv_path, '~/.rbenv'
 
 set :pty,             true
 set :use_sudo,        false
