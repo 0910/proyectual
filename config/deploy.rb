@@ -6,7 +6,7 @@ set :domain, "proyectual.nuevediez.com"
 set :repo_url,        'git@github.com:0910/laluli.git'
 set :application,     'proyectual'
 set :user,            'ubuntu'
-set :rbenv_ruby, '2.2.3'
+set :rbenv_ruby, '2.2.2'
 
 set :pty,             true
 set :use_sudo,        false
