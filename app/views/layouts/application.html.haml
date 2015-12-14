@@ -1,0 +1,41 @@
+!!!
+%html
+	%head
+		%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+			%title
+				Proyectual
+			= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+			= javascript_include_tag 'application', 'data-turbolinks-track' => true
+			= csrf_meta_tags
+			= yield(:head)
+
+	%body{:class => "#{controller_name} #{action_name}"}
+		%nav#topNav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				.navbar-header.col-md-3
+					%button.navbar-toggle.collapsed{"data-target" => "#bs-navbar", "data-toggle" => "collapse", :type => "button"}
+						%span.sr-only Toggle navigation
+						%span.icon-bar
+						%span.icon-bar
+						%span.icon-bar
+					%a.navbar-brand.page-scroll{:href => "#first"}
+						Proyectual
+				#bs-navbar.navbar-collapse.collapse.col-md-4
+					.row
+						%p lalal
+					.row
+						%ul.nav.navbar-nav
+							%li
+								%a.page-scroll{:href => "#one"} Home
+							%li
+								%a.page-scroll{:href => "#two"} Noticias
+							%li
+								%a.page-scroll{:href => "#three"} Eventos
+							%li
+								%a.page-scroll{:href => "#four"} Artistas
+							%li
+								%a.page-scroll{:href => "#last"} Info
+							%li
+								%a.page-scroll{:href => "#last"} Proyectual TV
+						
+		= yield
