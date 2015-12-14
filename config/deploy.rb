@@ -3,10 +3,10 @@ lock '3.4.0'
 
 server '40.76.56.133', roles: [:web, :app, :db], primary: true
 set :domain, "proyectual.nuevediez.com"
-set :repo_url,        'git@github.com:0910/laluli.git'
+set :repo_url,        'git@github.com:0910/proyectual.git'
 set :application,     'proyectual'
 set :user,            'ubuntu'
-set :rbenv_ruby, '2.2.2'
+set :rbenv_ruby, '2.2.3'
 
 set :pty,             true
 set :use_sudo,        false
@@ -51,7 +51,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo 'service unicorn_laluli restart'
+      sudo 'service unicorn_proyectual restart'
       sudo 'service nginx restart'
     end
   end
