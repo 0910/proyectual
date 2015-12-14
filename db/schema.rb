@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214174650) do
+ActiveRecord::Schema.define(version: 20151214213138) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 20151214174650) do
     t.datetime "updated_at",                   null: false
     t.string   "slug",             limit: 255
   end
+
+  create_table "event_artists", force: :cascade do |t|
+    t.integer  "event_id",   limit: 4
+    t.integer  "artist_id",  limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "event_artists", ["artist_id"], name: "index_event_artists_on_artist_id", using: :btree
+  add_index "event_artists", ["event_id"], name: "index_event_artists_on_event_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "name",             limit: 255
@@ -114,6 +124,8 @@ ActiveRecord::Schema.define(version: 20151214174650) do
 
   add_index "videos", ["video_category_id"], name: "index_videos_on_video_category_id", using: :btree
 
+  add_foreign_key "event_artists", "artists"
+  add_foreign_key "event_artists", "events"
   add_foreign_key "images", "artists"
   add_foreign_key "images", "events"
   add_foreign_key "images", "news"

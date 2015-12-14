@@ -154,7 +154,7 @@ form.filter_form{
 /* 01. Header */
 
 #header {
-    background-color: #2c2a52;
+    background-color: #101010;
     background-image: none;
     border-bottom: 0px;
     box-shadow: none;
@@ -166,6 +166,7 @@ form.filter_form{
     text-shadow: none;
     width: 100%;
     z-index: 900;
+    text-transform: uppercase;
     .header-item{
     	top: 0;
     }
@@ -192,7 +193,7 @@ form.filter_form{
     	li:hover, li.current{
     		a{
     			background-color: #fff;
-    			color: #2c2a52;
+    			color: #101010;
     		}
     	}
     }
@@ -381,7 +382,7 @@ body.logged_in .flash.flash_notice {
 /* 07 Login */
 
 body.logged_out{
-    background-color: #2c2a52;
+    background-color: #101010;
     #content_wrapper{
         margin-top: 120px;
         #active_admin_content{
@@ -394,7 +395,7 @@ body.logged_out{
         background-image: none;
         border: medium none;
         box-shadow: none;
-        color: #2c2a52;
+        color: #101010;
         font-size: 1.25em;
         font-weight: bold;
         line-height: 18px;

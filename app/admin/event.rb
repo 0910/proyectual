@@ -16,6 +16,11 @@ ActiveAdmin.register Event do
       row :facebook
       row :resident_advisor
       row :video
+      row :artists do 
+        event.artists.collect.each do |a|
+          a.name
+        end
+      end
       p.images.each do |image|
         row :image do
           image_tag(image.file.url(:thumb))
@@ -34,6 +39,7 @@ ActiveAdmin.register Event do
       f.input :facebook
       f.input :resident_advisor
       f.input :video
+      f.input :artists, :as => :select, :collection => Artist.all, :include_blank => false, :require => true, :multiple => true
     end
     f.inputs "Images" do
       f.has_many :images do |i|

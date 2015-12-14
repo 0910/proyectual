@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  active_admin:
+    dashboard_welcome:
+      welcome: "Welcome to Nueve Diez. This is the default dashboard page."
+      call_to_action: "This product is under development."
+    powered_by: "Powered by Nueve Diez - www.nuevediez.com"
+
