@@ -3,7 +3,7 @@ lock '3.4.0'
 
 server '40.76.56.133', roles: [:web, :app, :db], primary: true
 set :domain, "proyectual.nuevediez.com"
-set :repo_url,        'git@github.com:0910/proyectual.git'
+set :repo_url,		  'git://github.com/0910/proyectual.git'
 set :application,     'proyectual'
 set :user,            'ubuntu'
 set :rbenv_ruby, '2.2.3'
