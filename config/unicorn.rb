@@ -1,4 +1,4 @@
-# set path to application
+# set path to application - proyectual
 app_root = "/home/ubuntu/applications/proyectual/current"
 shared_path = "/home/ubuntu/applications/proyectual/shared"
 working_directory app_root
