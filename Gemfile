@@ -37,7 +37,7 @@ gem 'friendly_id'
 gem 'country_select'
 gem 'select2-rails'
 gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
-gem 'owlcarousel-rails'
+gem 'swipebox'
 
 
 group :development do

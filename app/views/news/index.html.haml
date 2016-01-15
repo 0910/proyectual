@@ -1,0 +1,40 @@
+%section.grid
+  .container-fluid
+    .row.no-gutter
+      - @news.each do |news|
+        .col-md-6.col-sm-6.grid-item.no-gutter.bg-green
+          - if news.images.empty?
+            = link_to(news_path(news), class: 'grid-link') do
+              .grid-hover
+                .grid-hover-content
+                  .lines
+                    .line.top
+                    .line.right
+                    .line.bottom
+                    .line.left
+                  %p Leer
+              .ph.md{:style => "background-image: image-url('image-not-available.jpg')"}
+            .grid-caption
+              %p.text-muted
+                #{news.date.to_date.to_formatted_s(:long)}
+              %h4
+                #{news.title}
+
+          - else
+            - news.images.each do |image|
+              - if image.cover == true
+                = link_to(news_path(news), class: 'grid-link') do
+                  .grid-hover
+                    .grid-hover-content
+                      .lines
+                        .line.top
+                        .line.right
+                        .line.bottom
+                        .line.left
+                      %p Leer
+                  .ph.md{:style => "background-image: url(#{image.file.url(:medium)})"}
+                .grid-caption
+                  %h4.text-muted
+                    #{news.date.to_date.to_formatted_s(:long)}
+                  %p
+                    #{news.title}

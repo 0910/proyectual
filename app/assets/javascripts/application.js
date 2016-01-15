@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require swiper.jquery
+//= require swipebox
+//= require jpreloader
 //= require_tree .

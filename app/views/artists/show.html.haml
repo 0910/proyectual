@@ -1,0 +1,78 @@
+%section.grid
+  .container-fluid
+    .row.no-gutter.bg-light-gray
+      .col-md-4.section-subinfo
+        .section-box
+          %h2.section-heading.no-margin
+            #{@artist.name}
+          .section-body
+            #{simple_format(truncate(@artist.name, :length => 280))}
+          %ul.list-inline.social-buttons
+            %li
+              = link_to(@artist.website) do
+                %i.fa.fa-web
+            %li
+              = link_to(@artist.soundcloud) do
+                %i.fa.fa-soundcloud
+            %li
+              = link_to(@artist.resident_advisor) do
+                %i.fa.fa-instagram
+            %li
+              = link_to(@artist.facebook) do
+                %i.fa.fa-facebook
+      .col-md-8.slider
+        .swiper-container
+          .swiper-wrapper   
+            - if @artist.images.empty?
+              .swiper-slide{:style => "background-image: image-url('image-not-available.jpg')"}
+            - else
+              - @artist.images.each do |image|
+                .swiper-slide{:style => "background-image: url(#{image.file.url(:large)})"}
+        .swiper-pagination
+%section#about.grid.text-center.bg-white
+  .container-fluid
+    .row
+      .col-lg-12
+        %h3.section-heading Eventos donde participó
+%section.grid.bg-light-gray
+  .container-fluid
+    .row.no-gutter
+      - @artist.events.each do |event|
+        .col-md-3.col-sm-6.grid-item
+          - if event.images.empty?
+            = link_to(event_path(event), class: 'grid-link') do
+              .grid-hover
+                .grid-hover-content
+                  .lines
+                    .line.top
+                    .line.right
+                    .line.bottom
+                    .line.left
+                  %p
+                    #{event.name}
+              = image_tag('image-not-available.jpg')
+          - else
+            - event.images.each do |image|
+              - if image.cover == true
+                = link_to(event_path(event), class: 'grid-link') do
+                  .grid-hover
+                    .grid-hover-content
+                      .lines
+                        .line.top
+                        .line.right
+                        .line.bottom
+                        .line.left
+                      %p
+                        #{event.name}
+                  .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+
+:javascript
+  $(document).ready(function(){
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      autoplay: 5000,
+      loop: true,
+      speed: 1000
+    });
+  });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214213138) do
+ActiveRecord::Schema.define(version: 20160106123544) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 20151214213138) do
     t.string   "resident_advisor", limit: 255
     t.string   "facebook",         limit: 255
     t.string   "soundcloud",       limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "slug",             limit: 255
+    t.string   "available",        limit: 255, default: "Yes"
+    t.string   "bio",              limit: 255
   end
 
   create_table "event_artists", force: :cascade do |t|
@@ -74,9 +76,13 @@ ActiveRecord::Schema.define(version: 20151214213138) do
     t.string   "facebook",         limit: 255
     t.string   "resident_advisor", limit: 255
     t.text     "description",      limit: 65535
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "slug",             limit: 255
+    t.integer  "year_id",          limit: 4
+    t.string   "available",        limit: 255,   default: "Yes"
+    t.string   "featured",         limit: 255,   default: "No"
+    t.string   "subtitle",         limit: 255
   end
 
   create_table "images", force: :cascade do |t|
@@ -102,9 +108,11 @@ ActiveRecord::Schema.define(version: 20151214213138) do
     t.string   "title",      limit: 255
     t.text     "body",       limit: 65535
     t.datetime "date"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "slug",       limit: 255
+    t.string   "available",  limit: 255,   default: "Yes"
+    t.string   "subtitle",   limit: 255
   end
 
   create_table "video_categories", force: :cascade do |t|
@@ -117,12 +125,19 @@ ActiveRecord::Schema.define(version: 20151214213138) do
     t.string   "name",              limit: 255
     t.string   "link",              limit: 255
     t.integer  "video_category_id", limit: 4
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.string   "slug",              limit: 255
+    t.string   "available",         limit: 255, default: "Yes"
   end
 
   add_index "videos", ["video_category_id"], name: "index_videos_on_video_category_id", using: :btree
+
+  create_table "years", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   add_foreign_key "event_artists", "artists"
   add_foreign_key "event_artists", "events"

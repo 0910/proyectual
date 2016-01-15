@@ -6,10 +6,8 @@ class Artist < ActiveRecord::Base
 	has_many :events, :through => :event_artists
 
 	extend FriendlyId
-	friendly_id :slug, use: :slugged
+	friendly_id :name, use: :slugged
 	
 	validates :name, presence: true
 	validates :name, uniqueness: true
-	validates :slug, presence: true
-	validates :slug, uniqueness: true
 end

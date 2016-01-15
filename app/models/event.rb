@@ -5,11 +5,11 @@ class Event < ActiveRecord::Base
 	has_many :event_artists, :dependent => :destroy
 	has_many :artists, :through => :event_artists
 
+	belongs_to :year
+
 	extend FriendlyId
-	friendly_id :slug, use: :slugged
+	friendly_id :name, use: :slugged
 
 	validates :name, presence: true
 	validates :name, uniqueness: true
-	validates :slug, presence: true
-	validates :slug, uniqueness: true
 end

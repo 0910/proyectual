@@ -1,18 +1,11 @@
 class ArtistsController < ApplicationController
   def index
+    @artists = Artist.all
   end
 
   def show
-  end
-
-  def artist
-    Artist.find_by_slug!(artist_id) if artist_id.present?
-  end
-
-  helper_method :artist
-
-  def artist_id
-  	params[:id]
+    @artist = Artist.friendly.find(params[:id])
+    @events = Event.joins(:event_artists).where(:event_artists => {:artist_id => @artist})
   end
 
 end

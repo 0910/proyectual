@@ -1,4 +1,9 @@
 ActiveAdmin.register Artist do
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end 
   index do
     column :id
     column :name
@@ -26,7 +31,6 @@ ActiveAdmin.register Artist do
     f.inputs 'Details' do
       f.semantic_errors
       f.input :name, :require => true
-      f.input :slug, :require => true
       f.input :website
       f.input :facebook
       f.input :resident_advisor

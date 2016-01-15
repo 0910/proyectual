@@ -1,17 +1,11 @@
 class EventsController < ApplicationController
   def index
+  	@years = Year.all
+    @events = Event.all
   end
 
   def show
+    @event = Event.friendly.find(params[:id])
   end
 
-  def event
-    Event.find_by_slug!(event_id) if event_id.present?
-  end
-
-  helper_method :event
-
-  def event_id
-  	params[:id]
-  end
 end

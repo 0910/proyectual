@@ -1,87 +1,93 @@
-%header#first
-  .header-content
-    .inner
-      %h1.cursive Simple, One Page Design
-      %h4 A free landing page theme with video background
-      %hr
-      %a#toggleVideo.btn.btn-primary.btn-xl{"data-toggle" => "collapse", :href => "#video-background"} Toggle Video
-       
-      %a.btn.btn-primary.btn-xl.page-scroll{:href => "#one"} Get Started
+%header
+  .swiper-container
+    .swiper-wrapper
+      - @events.each do |event|
+        - event.images.each do |image|
+          - if image.cover == true
+            .swiper-slide{:style => "background-image: url(#{image.file.url(:large)})"}
+              .swiper-caption
+                .swiper-caption-inner
+                  %p 15 de Junio
+                  = link_to(event.website, class: 'btn btn-xl-noborder') do
+                    .lines
+                      .line.top
+                      .line.right
+                      .line.bottom
+                      .line.left
+                    %h1
+                      #{event.name}
+                  %p
+                    Parc Del Forum
+  .swiper-pagination
 
-%section#one.bg-primary
-  .container
+%section#about.grid.text-center.bg-white
+  .container-fluid
     .row
-      .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.text-center
-        %h2.margin-top-0.text-primary Built On The Bootstrap Grid
-        %br
-        %p.text-faded
-          Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
-        %a.btn.btn-default.btn-xl.page-scroll{:href => "#three"} Learn More
-%section#two
-  .container
-    .row
-      .col-lg-12.text-center
-        %h2.margin-top-0.text-primary Flexible Layouts
-        %hr.primary/
-  .container
-    .row
-      .col-lg-4.col-md-4.text-center
-        .feature
-          %i.icon-lg.ion-android-laptop.wow.fadeIn{"data-wow-delay" => ".3s"}
-          %h3 Responsive
-          %p.text-muted Your site looks good everywhere
-      .col-lg-4.col-md-4.text-center
-        .feature
-          %i.icon-lg.ion-social-sass.wow.fadeInUp{"data-wow-delay" => ".2s"}
-          %h3 Customizable
-          %p.text-muted Easy to theme and customize with SASS
-      .col-lg-4.col-md-4.text-center
-        .feature
-          %i.icon-lg.ion-ios-star-outline.wow.fadeIn{"data-wow-delay" => ".3s"}
-          %h3 Consistent
-          %p.text-muted A mature, well-tested, stable codebase
-%section#three
-  .container
-    .row
-      .col-lg-4.col-sm-6
-        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d", "data-toggle" => "modal", :href => "#galleryModal"}
-          %img.img-responsive{:alt => "Image 1", :src => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d"}/
-          .gallery-box-caption
-            .gallery-box-content
-              %div
-                %i.icon-lg.ion-ios-search
-      .col-lg-4.col-sm-6
-        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
-          %img.img-responsive{:alt => "Image 2", :src => "//splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg"}/
-          .gallery-box-caption
-            .gallery-box-content
-              %div
-                %i.icon-lg.ion-ios-search
-      .col-lg-4.col-sm-6
-        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4", "data-toggle" => "modal", :href => "#galleryModal"}
-          %img.img-responsive{:alt => "Image 3", :src => "//splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4"}/
-          .gallery-box-caption
-            .gallery-box-content
-              %div
-                %i.icon-lg.ion-ios-search
-      .col-lg-4.col-sm-6
-        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
-          %img.img-responsive{:alt => "Image 4", :src => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg"}/
-          .gallery-box-caption
-            .gallery-box-content
-              %div
-                %i.icon-lg.ion-ios-search
-      .col-lg-4.col-sm-6
-        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
-          %img.img-responsive{:alt => "Image 5", :src => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg"}/
-          .gallery-box-caption
-            .gallery-box-content
-              %div
-                %i.icon-lg.ion-ios-search
-      .col-lg-4.col-sm-6
-        %a.gallery-box{"data-src" => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg", "data-toggle" => "modal", :href => "#galleryModal"}
-          %img.img-responsive{:alt => "Image 6", :src => "//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg"}/
-          .gallery-box-caption
-            .gallery-box-content
-              %div
-                %i.icon-lg.ion-ios-search
+      .col-lg-12
+        %h2.section-heading Somos Proyectual
+      .col-md-8.col-md-offset-2
+        .section-body.section-box-alt
+          %p
+            Un equipo de jóvenes barceloneses con vocación por la música electrónica que desde 2005 ha realizado más de un centenar de eventos propios como productora, promotora y gestora de clubs. Con el paso de los años, el equipo ha ido creciendo, así como nuestro conocimiento del mercado y el público objetivo. 
+        %button.btn-black.btn-lg
+          Mas info
+
+%section.grid.bg-light-gray
+  .container-fluid
+    .row.no-gutter
+      - @news.each do |news|
+        .col-xs-12.col-sm-6.col-md-3.grid-item
+          - if news.images.empty?
+            = link_to(news_path(news), class: 'grid-link') do
+              .grid-hover
+                .grid-hover-content
+                  .lines
+                    .line.top
+                    .line.right
+                    .line.bottom
+                    .line.left
+                  %p view
+              = image_tag('image-not-available.jpg')
+            .grid-caption.text-left
+              %p.text-muted
+                #{news.date.to_date.to_formatted_s(:long)}
+              %h4
+                #{news.title}
+          - else
+            - news.images.each do |image|
+              - if image.cover == true
+                = link_to(news_path(news), class: 'grid-link') do
+                  .grid-hover
+                    .grid-hover-content
+                      .lines
+                        .line.top
+                        .line.right
+                        .line.bottom
+                        .line.left
+                      %p view
+                  .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+                .grid-caption.text-left
+                  %h4.text-muted
+                    #{news.date.to_date.to_formatted_s(:long)}
+                  %p
+                    #{simple_format(truncate(news.title, :length => 40))}
+  
+
+:javascript
+  $(document).ready(function(){
+    var swiper = new Swiper('header .swiper-container', {
+      pagination: 'header .swiper-pagination',
+      paginationClickable: true,
+      direction: 'vertical',
+      autoplay: 5000,
+      loop: true,
+      speed: 1000
+    });
+    var swiper = new Swiper('.carousel .swiper-container', {
+      pagination: '.carousel .swiper-pagination',
+      slidesPerView: 3,
+      paginationClickable: true,
+      spaceBetween: 1,
+      grabCursor: true
+    });
+  });

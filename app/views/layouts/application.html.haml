@@ -10,32 +10,103 @@
 			= yield(:head)
 
 	%body{:class => "#{controller_name} #{action_name}"}
-		%nav#topNav.navbar.navbar-default.navbar-fixed-top
+		%nav.no-gutter
 			.container-fluid
-				.navbar-header.col-md-3
-					%button.navbar-toggle.collapsed{"data-target" => "#bs-navbar", "data-toggle" => "collapse", :type => "button"}
-						%span.sr-only Toggle navigation
-						%span.icon-bar
-						%span.icon-bar
-						%span.icon-bar
-					%a.navbar-brand.page-scroll{:href => "#first"}
-						Proyectual
-				#bs-navbar.navbar-collapse.collapse.col-md-4
-					.row
-						%p lalal
-					.row
-						%ul.nav.navbar-nav
+				.col-xs-12.col-sm-6.col-md-6.box
+					.col-xs-9.col-sm-6.col-md-6
+						= link_to(root_path, class: 'logo') do
+							= image_tag('logo.png')
+					.col-xs-3.col-sm-6.col-md-6
+						%button.c-hamburger.c-hamburger--htx.pull-right
+							%span
+								toggle menu
+				.col-xs-6.col-sm-6.col-md-6.box.second-menu.hidden-xs
+					.col-md-6
+						%button#tickets.btn.btn-nav.btn-sm
+							Get Tickets
+					.col-md-6
+						%ul.list-inline.social-buttons-nav.pull-right
 							%li
-								%a.page-scroll{:href => "#one"} Home
-							%li
-								%a.page-scroll{:href => "#two"} Noticias
-							%li
-								%a.page-scroll{:href => "#three"} Eventos
-							%li
-								%a.page-scroll{:href => "#four"} Artistas
-							%li
-								%a.page-scroll{:href => "#last"} Info
-							%li
-								%a.page-scroll{:href => "#last"} Proyectual TV
-						
+								%a{:href => "#"}
+									%i.fa.fa-facebook
+								%li
+									%a{:href => "#"}
+										%i.fa.fa-instagram
+								%li
+									%a{:href => "#"}
+										%i.fa.fa-twitter
+								%li
+									%a{:href => "#"}
+										%i.fa.fa-youtube
+								%li
+									%a{:href => "#"}
+										%i.fa.fa-vimeo
+		.menu-left.hidden-xs
+		.menu-right
+			.menu-inner
+				= link_to('Noticias', news_index_path)
+				= link_to('Eventos', events_path)
+				= link_to('Artistas', artists_path)
+				%a{:href => "#team"} Info  Contacto
+				= link_to('Proyectual TV', videos_path)
+
 		= yield
+		%footer.no-gutter
+			.container-fluid
+				.row
+					.col-md-1.text-left
+						= link_to(root_path, class: 'logo') do
+							= image_tag('logo_footer.png')
+					.col-md-3.text-left.footmenu
+						= link_to('Noticias', news_index_path)
+						= link_to('Eventos', events_path)
+						= link_to('Artistas', artists_path)
+						%a{:href => "#team"} Info  Contacto
+						= link_to('Proyectual TV', videos_path)
+					.col-md-8.text-right
+						%ul.list-inline.social-buttons
+							%li
+								%a{:href => "#"}
+									%i.fa.fa-facebook
+							%li
+								%a{:href => "#"}
+									%i.fa.fa-instagram
+							%li
+								%a{:href => "#"}
+									%i.fa.fa-twitter
+							%li
+								%a{:href => "#"}
+									%i.fa.fa-youtube
+							%li
+								%a{:href => "#"}
+									%i.fa.fa-vimeo
+						%ul.list-inline.quicklinks
+							%li
+								%a{:href => "#"} Privacy Policy
+							%li
+								%a{:href => "#"} Terms of Use
+						%span.copyright
+							© Proyectual 2016.
+							= link_to('a NueveDiez website', 'http://www.nuevediez.com', target: '_blank')
+:javascript
+	$('.c-hamburger').click(function(){
+		$(this).toggleClass('is-active');
+		$('.menu-inner, .menu-left, .menu-right').toggleClass('active');
+	});
+	$('body').jpreLoader({
+		loaderVPos: '0%',
+		autoClose: true,
+		showPercentage: false,
+	}, function() {
+		
+	});
+	$(window).on('scroll', function(){
+		if ($(this).scrollTop() > 100){
+			$('nav').addClass('shrink');
+			$('#tickets').removeClass('btn-white').addClass('btn-black');
+		}
+		else {
+			$('nav').removeClass('shrink');
+			$('#tickets').removeClass('btn-black').addClass('btn-white');
+		}
+	});
