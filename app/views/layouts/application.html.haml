@@ -22,32 +22,32 @@
 								toggle menu
 				.col-xs-6.col-sm-6.col-md-6.box.second-menu.hidden-xs
 					.col-md-6
-						%button#tickets.btn.btn-nav.btn-sm
-							Get Tickets
+						= link_to "Get Tickets", "http://www.residentadvisor.net/promoter.aspx?id=19688", class: 'btn btn-nav btn-sm'
+	
 					.col-md-6
 						%ul.list-inline.social-buttons-nav.pull-right
 							%li
-								%a{:href => "#"}
+								= link_to "http://www.facebook.com/proyectual", :target => '_blank' do
 									%i.fa.fa-facebook
-								%li
-									%a{:href => "#"}
-										%i.fa.fa-instagram
-								%li
-									%a{:href => "#"}
-										%i.fa.fa-twitter
-								%li
-									%a{:href => "#"}
-										%i.fa.fa-youtube
-								%li
-									%a{:href => "#"}
-										%i.fa.fa-vimeo
+							%li
+								= link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
+									%i.fa.fa-instagram
+							%li
+								= link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
+									%i.fa.fa-twitter
+							%li
+								= link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
+									%i.fa.fa-youtube
+							%li
+								= link_to "https://vimeo.com/user13110331", :target => '_blank' do
+									%i.fa.fa-vimeo
 		.menu-left.hidden-xs
 		.menu-right
 			.menu-inner
 				= link_to('Noticias', news_index_path)
 				= link_to('Eventos', events_path)
 				= link_to('Artistas', artists_path)
-				%a{:href => "#team"} Info  Contacto
+				= link_to('Info/Contacto', about_index_path)
 				= link_to('Proyectual TV', videos_path)
 
 		= yield
@@ -61,24 +61,24 @@
 						= link_to('Noticias', news_index_path)
 						= link_to('Eventos', events_path)
 						= link_to('Artistas', artists_path)
-						%a{:href => "#team"} Info  Contacto
+						= link_to('Info/Contacto', about_index_path)
 						= link_to('Proyectual TV', videos_path)
 					.col-md-8.text-right
 						%ul.list-inline.social-buttons
 							%li
-								%a{:href => "#"}
+								= link_to "http://www.facebook.com/proyectual", :target => '_blank' do
 									%i.fa.fa-facebook
 							%li
-								%a{:href => "#"}
+								= link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
 									%i.fa.fa-instagram
 							%li
-								%a{:href => "#"}
+								= link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
 									%i.fa.fa-twitter
 							%li
-								%a{:href => "#"}
+								= link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
 									%i.fa.fa-youtube
 							%li
-								%a{:href => "#"}
+								= link_to "https://vimeo.com/user13110331", :target => '_blank' do
 									%i.fa.fa-vimeo
 						%ul.list-inline.quicklinks
 							%li
@@ -87,7 +87,11 @@
 								%a{:href => "#"} Terms of Use
 						%span.copyright
 							© Proyectual 2016.
-							= link_to('a NueveDiez website', 'http://www.nuevediez.com', target: '_blank')
+							= link_to 'http://www.wearenoise.agency', target: '_blank' do
+								Made with
+								%i.fa.fa-heart
+								by NOISE
+
 :javascript
 	$('.c-hamburger').click(function(){
 		$(this).toggleClass('is-active');

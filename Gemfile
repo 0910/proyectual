@@ -38,6 +38,7 @@ gem 'country_select'
 gem 'select2-rails'
 gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem 'swipebox'
+gem 'active_admin_csv_import'
 
 
 group :development do

@@ -1,23 +1,21 @@
 %header
   .swiper-container
     .swiper-wrapper
-      - @events.each do |event|
-        - event.images.each do |image|
-          - if image.cover == true
-            .swiper-slide{:style => "background-image: url(#{image.file.url(:large)})"}
-              .swiper-caption
-                .swiper-caption-inner
-                  %p 15 de Junio
-                  = link_to(event.website, class: 'btn btn-xl-noborder') do
-                    .lines
-                      .line.top
-                      .line.right
-                      .line.bottom
-                      .line.left
-                    %h1
-                      #{event.name}
-                  %p
-                    Parc Del Forum
+      - @splashes.each do |splash|
+        .swiper-slide{:style => "background-image: url(#{splash.image.url(:large)})"}
+          .swiper-caption
+            .swiper-caption-inner
+              %p #{splash.title}
+              = link_to(splash.link, class: 'btn btn-xl-noborder') do
+                .lines
+                  .line.top
+                  .line.right
+                  .line.bottom
+                  .line.left
+                %h1
+                  #{splash.call_to_action}
+              %p
+                #{splash.subtitle}
   .swiper-pagination
 
 %section#about.grid.text-center.bg-white
@@ -29,8 +27,7 @@
         .section-body.section-box-alt
           %p
             Un equipo de jóvenes barceloneses con vocación por la música electrónica que desde 2005 ha realizado más de un centenar de eventos propios como productora, promotora y gestora de clubs. Con el paso de los años, el equipo ha ido creciendo, así como nuestro conocimiento del mercado y el público objetivo. 
-        %button.btn-black.btn-lg
-          Mas info
+        = link_to "Mas info", about_index_path, class: 'btn-black btn-lg'
 
 %section.grid.bg-light-gray
   .container-fluid

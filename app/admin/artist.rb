@@ -1,4 +1,14 @@
 ActiveAdmin.register Artist do
+
+  csv_importable :columns => [:name, :website, :facebook, :resident_advisor, :soundcloud], :import_unique_key => :code
+
+  csv do
+    column :name
+    column :resident_advisor
+    column :facebook
+    column :soundcloud
+  end
+
   controller do
     def find_resource
       scoped_collection.friendly.find(params[:id])

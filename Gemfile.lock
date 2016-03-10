@@ -29,6 +29,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_admin_csv_import (2.0.0)
+      rails (>= 4.0)
     activeadmin (1.0.0.pre2)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
@@ -282,6 +284,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_csv_import
   activeadmin (~> 1.0.0.pre1)
   activeadmin-select2!
   bootstrap-sass (~> 3.3.5)
