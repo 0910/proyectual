@@ -901,10 +901,19 @@ section#about{
         display: inline-block;
     }
 }
-.about-img{
-    background-image: image-url('about.jpg');
-}
 
+.about{
+    section .section-subinfo .section-body{
+        font-family: "Roboto";
+        font-size: 16px;
+    }
+    .about-img{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
 /* Contact */
 
 section#contact {
