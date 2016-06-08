@@ -11,6 +11,7 @@ index do
       row :title
       row :subtitle
       row :call_to_action
+      row :link
     end
   end
 
@@ -20,6 +21,7 @@ index do
       f.input :title, :require => true
       f.input :subtitle
       f.input :call_to_action
+      f.input :link
     end
     f.inputs "Image" do
       f.input :image, :as => :file, label: 'Image', hint: f.object.new_record? ? f.template.content_tag(:span, "No Image Yet") : image_tag(f.object.image.url(:thumb))
