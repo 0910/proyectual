@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-server '13.92.25.71', roles: [:web, :app, :db], primary: true
+server '40.71.46.66', roles: [:web, :app, :db], primary: true
 set :domain, "proyectual.nuevediez.com"
 set :repo_url,        'git@github.com:0910/proyectual.git'
 set :application,     'proyectual'
