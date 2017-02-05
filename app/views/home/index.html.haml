@@ -1,58 +1,47 @@
 %header
-  .swiper-container
-    .swiper-wrapper
-      - @splashes.each do |splash|
-        .swiper-slide{:style => "background-image: url(#{splash.image.url(:large)})"}
-          .swiper-caption
-            .swiper-caption-inner
-              %p #{splash.title}
-              = link_to(splash.link, class: 'btn btn-xl-noborder', target: '_blank') do
-                .lines
-                  .line.top
-                  .line.right
-                  .line.bottom
-                  .line.left
-                %h1
-                  #{splash.call_to_action}
-              %p
-                #{splash.subtitle}
-  .swiper-pagination
+  .no-gutter.splashes
+    - @splashes.each do |splash|
+      .col-md-6.splash{:style => "background-image: url(#{splash.image.url(:large)})"}
+        .caption
+          .inner
+            %p #{splash.title}
+            = link_to(splash.link, class: 'btn btn-xl-noborder', target: '_blank') do
+              .lines
+                .line.top
+                .line.right
+                .line.bottom
+                .line.left
+              %h1
+                #{splash.call_to_action}
+            %p
+              #{splash.subtitle}
+  .isologo.vcenter
 
-%section#about.grid.text-center.bg-white
+%section#about.grid.text-center.bg-grey
   .container-fluid
     .row
-      .col-lg-12
-        %h2.section-heading PROYECTUAL
+      .col-md-2.col-md-offset-5.hexagon
+        %h2.section-heading ABOUT
+    .row
       .col-md-8.col-md-offset-2
         .section-body.section-box-alt
           %p
             PROYECTUAL es un equipo de profesionales vinculados al mundo de la música electrónica, que lleva organizando eventos de alta convocatoria como productores, promotores y mánagers de clubs desde 2005.
-        = link_to "Mas info", about_index_path, class: 'btn-black btn-lg'
+        = link_to "Get to know us", about_index_path
 
-%section.grid.bg-light-gray
-  .container-fluid
-    .row.no-gutter
-      - @news.each do |news|
-        .col-xs-12.col-sm-6.col-md-3.grid-item
-          - if news.images.empty?
-            = link_to(news_path(news), class: 'grid-link') do
-              .grid-hover
-                .grid-hover-content
-                  .lines
-                    .line.top
-                    .line.right
-                    .line.bottom
-                    .line.left
-                  %p view
-              = image_tag('image-not-available.jpg')
-            .grid-caption.text-left
-              %p.text-muted
-                #{news.date.to_date.to_formatted_s(:long)}
-              %h4
-                #{news.title}
-          - else
-            - news.images.each do |image|
-              - if image.cover == true
+%section.grid.bg-dark-grey#news
+  .container
+    .row
+      .col-md-2.col-md-offset-5.hexagon
+        %h2.section-heading.text-center NEWS
+    .row
+      .vert-line
+    .row
+      .no-gutter
+        - @news.each do |news|
+          .col-xs-12.col-sm-6.col-md-12.grid-item
+            - if news.images.empty?
+              .col-md-6
                 = link_to(news_path(news), class: 'grid-link') do
                   .grid-hover
                     .grid-hover-content
@@ -61,25 +50,44 @@
                         .line.right
                         .line.bottom
                         .line.left
-                      %p view
-                  .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+                      %p read more
+                  = image_tag('image-not-available.jpg')
+              .col-md-6
                 .grid-caption.text-left
-                  %h4.text-muted
+                  %p.text-muted
                     #{news.date.to_date.to_formatted_s(:long)}
+                  %h4
+                    #{news.title}
                   %p
-                    #{simple_format(truncate(news.title, :length => 40))}
-  
+                    #{news.body}
+            - else
+              - news.images.each do |image|
+                - if image.cover == true
+                  .row.no-gutter
+                    = link_to(news_path(news), class: 'col-md-6 grid-link') do
+                      .grid-hover
+                        .grid-hover-content
+                          .lines
+                            .line.top
+                            .line.right
+                            .line.bottom
+                            .line.left
+                          %p read more
+                      .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+                    .col-md-6.grid-caption.text-left
+                      %p.text-muted
+                        #{news.date.to_date.to_formatted_s(:long)}
+                      %h4
+                        #{truncate(news.title, :length => 40)}
+                      %p
+                        #{news.body}
+    .row
+      .vert-line
+    .row.text-center
+      = link_to "View all news", news_index_path, class: 'btn btn-green btn-sm'
 
 :javascript
   $(document).ready(function(){
-    var swiper = new Swiper('header .swiper-container', {
-      pagination: 'header .swiper-pagination',
-      paginationClickable: true,
-      direction: 'vertical',
-      autoplay: 5000,
-      loop: true,
-      speed: 1000
-    });
     var swiper = new Swiper('.carousel .swiper-container', {
       pagination: '.carousel .swiper-pagination',
       slidesPerView: 3,

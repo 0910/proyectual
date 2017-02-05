@@ -10,6 +10,10 @@ nav{
     -webkit-transition: all .6s;
     -moz-transition: all .6s;
     transition: all .6s;
+    .container{
+      width: calc(100% - 60px);
+      padding: 0;
+    }
     .second-menu{
         background-color: #fff;
         padding: 0 30px;
@@ -23,7 +27,6 @@ nav{
     }
     .logo{
         height: 43px;
-        margin-left: 15px;
         img{
             height: 100%;
         }
@@ -56,10 +59,10 @@ nav{
 }
 
 .c-hamburger {
-  display: block;
+  display: inline-block;
   position: relative;
   overflow: hidden;
-  margin: 0 15px 0 0;
+  margin: 0;
   padding: 0;
   width: 30px;
   height: 45px;
@@ -165,7 +168,7 @@ nav{
 }
 ul.social-buttons-nav li a {
     display: block;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 40px;
     color: #000;
     outline: 0;
@@ -178,117 +181,105 @@ ul.social-buttons-nav li a:focus,
 ul.social-buttons-nav li a:active {
     color: #84b6bc;
 }
+ul.social-buttons-nav p{
+  font-size: 14px;
+  line-height:40px;
+  font-weight: 700;
+}
 
 .menu-inner{
     position: relative;
     top: 50%;
     -webkit-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
-    opacity: 0;
     margin-top: 20px;
     text-align: center;
     transform: translate(0,-50%);
     a{
-        font-family: 'Roboto';
+        text-decoration: none;
         width: 100%;
         letter-spacing: 0.025em;
         font-weight: 300;
-        font-size: 24px;
-        color: #101010;
+        font-size: 40px;
+        color: #fff;
+        text-align: left;
         width: 100%;
         display: block;
-        line-height: 3;
+        line-height: 1.25;
     }
     a:hover{
-      color: #606060;
+      color: #5bc6d0;
+    }
+    p{
+        width: 100%;
+        letter-spacing: 0.025em;
+        font-weight: 300;
+        font-size: 20px;
+        color: #c0c0c0;
+        text-align: right;
+        width: 100%;
+        display: block;
+        line-height: 1.8;
     }
 }
-.menu-right{
+.menu{
   z-index: 1031;
   width: 100%;
-  top: -100%;
+  top: 0;
+  left:0;
   height: 100%;
-  background-color: #fff;
+  background-color: rgba(32,24,25,0.98);
   -webkit-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
   position: fixed;
-  left: 0;
-}
-.menu-left{
-  z-index: 1031;
-  width: 100%;
-  bottom: -100%;
-  height: 100%;
-  background-color: #000;
-  -webkit-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
-  transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
-  position: fixed;
+  display: none;
 }
 
-.menu-inner.active{
-    margin-top: 0px;
-    opacity: 1;
-    a{
-        text-decoration: none;
-    }
-}
 .menu-left.active{
   bottom: 0;
 }
-.menu-right.active{
-  top: 0;
-}
 
-
-.home, .events.show{
-  nav{
-    position: absolute;
-    background-color: #000;
+nav{
+  position: absolute;
+  border:0px;
+  .second-menu{
+    background-color: transparent;
     border:0px;
-    .second-menu{
-      background-color: transparent;
-      border:0px;
-    }
-    .btn-nav {
-      color: #fff;
-      border:2px solid #fff;
-    }
-    .btn-nav:hover,
-    .btn-nav:focus,
-    .btn-nav:active,
-    .btn-nav.active,
-    .open .dropdown-toggle.btn-nav {
-        color: #000;
-        background-color: #fff;
-        border-color: #fff;
-    }
   }
-  nav.shrink{
-    background-color: #101010;
-    border-bottom: 1px solid #333;
-    .second-menu{
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      a{
-        color: #101010;
-      }
-    }
-  }
-  ul.social-buttons-nav li a {
+  .btn-nav {
     color: #fff;
+    border:2px solid #fff;
   }
+  .btn-nav:hover,
+  .btn-nav:focus,
+  .btn-nav:active,
+  .btn-nav.active,
+  .open .dropdown-toggle.btn-nav {
+      color: #000;
+      background-color: #fff;
+      border-color: #fff;
+  }
+}
+nav.shrink{
+  background-color: #101010;
+  border-bottom: 1px solid #333;
+  .second-menu{
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    a{
+      color: #101010;
+    }
+  }
+}
+ul.social-buttons-nav li a {
+  color: #fff;
 }
 @media (min-width:768px){
   nav{
-    background-color: #000;
+    background-color: transparent;
     .box{
         padding-top: 40px;
         padding-bottom: 40px;
-    }
-  }
-  .home, .events.show{
-    nav{
-      background-color: transparent;
     }
   }
   .menu-left{

@@ -4,6 +4,7 @@
 
 ready = ->
 	$('#event_artist_ids').multipleSelect();
+	$('#event_event_ids').multipleSelect();
 	
 set_admin_selectable_events = ->
 	$('select.admin-selectable').on 'change', (e) ->

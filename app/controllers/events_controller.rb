@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.friendly.find(params[:id])
+    @events = @event.events
     @artists = @event.artists
   end
 

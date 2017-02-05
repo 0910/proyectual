@@ -1,30 +1,24 @@
-%section#events.grid.bg-darkest-gray
-  .container-fluid
+%section#events.grid.bg-grey
+  .no-gutter.splashes
+    .col-md-12.header.text-center
+      %h1.section-heading.vcenter
+        Events
+      .gradient
+  .container
     - @years.each do |year|
-      .row.no-gutter.year.row-async
-        %p.year-number.hidden-xs
-          #{year.name}
-        .col-xs-12.col-sm-6.col-md-6.col-async-left
-          %p.year-number.visible-xs
-            #{year.name}
-        .col-xs-12.col-sm-6.col-md-6.no-gutter.col-async-right
-          - year.events.each do |event|
-            .col-md-12.col-sm-12.grid-item
-              - if event.images.empty?
-                = link_to(event_path(event), class: 'grid-link') do
-                  .grid-hover
-                    .grid-hover-content
-                      .lines
-                        .line.top
-                        .line.right
-                        .line.bottom
-                        .line.left
-                      %p #{event.name}
-                  .ph{:style => "background-image: image-url('image-not-available.jpg')"}
-              - else
-                - event.images.each do |image|
-                  - if image.cover == true
-                    = link_to(event_path(event), class: 'grid-link') do
+      .year
+        .row
+          .col-md-2.col-md-offset-5.hexagon.text-center
+            %h2.section-heading #{year.name}
+        .row
+          .vert-line
+        .row
+          .no-gutter
+            - year.events.each do |event|
+              .col-xs-12.col-sm-6.col-md-12.grid-item
+                - if event.images.empty?
+                  .row.no-gutter
+                    = link_to(event_path(event), class: 'col-md-6 grid-link') do
                       .grid-hover
                         .grid-hover-content
                           .lines
@@ -32,5 +26,34 @@
                             .line.right
                             .line.bottom
                             .line.left
-                          %p #{event.name}
-                      .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+                          %p read more
+                      .ph.image-not-available
+                    .col-md-6.grid-caption.text-left
+                      %h4
+                        #{truncate(event.name, :length => 40)}
+                      %p
+                        #{event.description}
+                - else
+                  - event.images.each do |image|
+                    - if image.cover == true
+                      .row.no-gutter
+                        = link_to(event_path(event), class: 'col-md-6 grid-link') do
+                          .grid-hover
+                            .grid-hover-content
+                              .lines
+                                .line.top
+                                .line.right
+                                .line.bottom
+                                .line.left
+                              %p read more
+                          .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+                        .col-md-6.grid-caption.text-left
+                          %h4
+                            #{truncate(event.name, :length => 40)}
+                          %p
+                            #{event.description}
+        .row
+          .vert-line
+    .row
+      .col-md-2.col-md-offset-5.text-center
+        %a.gotop

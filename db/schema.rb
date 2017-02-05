@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310081716) do
+ActiveRecord::Schema.define(version: 20170205180811) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -69,20 +69,29 @@ ActiveRecord::Schema.define(version: 20160310081716) do
   add_index "event_artists", ["artist_id"], name: "index_event_artists_on_artist_id", using: :btree
   add_index "event_artists", ["event_id"], name: "index_event_artists_on_event_id", using: :btree
 
+  create_table "event_connections", id: false, force: :cascade do |t|
+    t.integer "event_a_id", limit: 4, null: false
+    t.integer "event_b_id", limit: 4, null: false
+  end
+
   create_table "events", force: :cascade do |t|
-    t.string   "name",             limit: 255
-    t.string   "video",            limit: 255
-    t.string   "website",          limit: 255
-    t.string   "facebook",         limit: 255
-    t.string   "resident_advisor", limit: 255
-    t.text     "description",      limit: 65535
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "slug",             limit: 255
-    t.integer  "year_id",          limit: 4
-    t.string   "available",        limit: 255,   default: "Yes"
-    t.string   "featured",         limit: 255,   default: "No"
-    t.string   "subtitle",         limit: 255
+    t.string   "name",                     limit: 255
+    t.string   "video",                    limit: 255
+    t.string   "website",                  limit: 255
+    t.string   "facebook",                 limit: 255
+    t.string   "resident_advisor",         limit: 255
+    t.text     "description",              limit: 65535
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+    t.string   "slug",                     limit: 255
+    t.integer  "year_id",                  limit: 4
+    t.string   "available",                limit: 255,   default: "Yes"
+    t.string   "featured",                 limit: 255,   default: "No"
+    t.string   "subtitle",                 limit: 255
+    t.string   "video_cover_file_name",    limit: 255
+    t.string   "video_cover_content_type", limit: 255
+    t.integer  "video_cover_file_size",    limit: 4
+    t.datetime "video_cover_updated_at"
   end
 
   create_table "images", force: :cascade do |t|

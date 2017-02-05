@@ -32,6 +32,11 @@ ActiveAdmin.register Event do
           a.name
         end
       end
+      row :events do 
+        event.events.collect.each do |a|
+          a.name
+        end
+      end
       p.images.each do |image|
         row :image do
           image_tag(image.file.url(:thumb))
@@ -52,7 +57,9 @@ ActiveAdmin.register Event do
       f.input :facebook
       f.input :resident_advisor
       f.input :video
+      f.input :video_cover, :as => :file, label: 'Video Cover', hint: f.object.new_record? ? f.template.content_tag(:span, "No Image Yet") : image_tag(f.object.video_cover.url(:thumb))
       f.input :artists, :as => :select, :collection => Artist.all, :include_blank => false, :require => true, :multiple => true
+      f.input :events, :as => :select, :collection => Event.all, :include_blank => false, :require => true, :multiple => true
     end
     f.inputs "Images" do
       f.has_many :images do |i|

@@ -1,40 +1,57 @@
-%section.grid
-  .container-fluid
-    .row.no-gutter
+%section#news.grid.bg-grey
+  .no-gutter.splashes
+    .col-md-12.header.text-center
+      %h1.section-heading.vcenter
+        News
+      .gradient
+  .container
+    .row
+      .col-md-2.col-md-offset-5.hexagon.text-center
+        %h2.section-heading by date
+    .row
+      .vert-line
+    .no-gutter
       - @news.each do |news|
-        .col-md-6.col-sm-6.grid-item.no-gutter.bg-green
+        .col-xs-12.col-sm-6.col-md-12.grid-item
           - if news.images.empty?
-            = link_to(news_path(news), class: 'grid-link') do
-              .grid-hover
-                .grid-hover-content
-                  .lines
-                    .line.top
-                    .line.right
-                    .line.bottom
-                    .line.left
-                  %p Leer
-              .ph.md{:style => "background-image: image-url('image-not-available.jpg')"}
-            .grid-caption
-              %p.text-muted
-                #{news.date.to_date.to_formatted_s(:long)}
-              %h4
-                #{news.title}
-
+            .col-md-6
+              = link_to(news_path(news), class: 'grid-link') do
+                .grid-hover
+                  .grid-hover-content
+                    .lines
+                      .line.top
+                      .line.right
+                      .line.bottom
+                      .line.left
+                    %p read more
+                = image_tag('image-not-available.jpg')
+            .col-md-6
+              .grid-caption.text-left
+                %h4
+                  #{news.title}
+                %p
+                  #{news.body}
           - else
             - news.images.each do |image|
               - if image.cover == true
-                = link_to(news_path(news), class: 'grid-link') do
-                  .grid-hover
-                    .grid-hover-content
-                      .lines
-                        .line.top
-                        .line.right
-                        .line.bottom
-                        .line.left
-                      %p Leer
-                  .ph.md{:style => "background-image: url(#{image.file.url(:medium)})"}
-                .grid-caption
-                  %h4.text-muted
-                    #{news.date.to_date.to_formatted_s(:long)}
-                  %p
-                    #{news.title}
+                .row.no-gutter
+                  = link_to(news_path(news), class: 'col-md-6 grid-link') do
+                    .grid-hover
+                      .grid-hover-content
+                        .lines
+                          .line.top
+                          .line.right
+                          .line.bottom
+                          .line.left
+                        %p read more
+                    .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
+                  .col-md-6.grid-caption.text-left
+                    %h4
+                      #{truncate(news.title, :length => 40)}
+                    %p
+                      #{news.body}
+  .row
+    .vert-line
+  .row
+    .col-md-2.col-md-offset-5.text-center
+      %a.gotop

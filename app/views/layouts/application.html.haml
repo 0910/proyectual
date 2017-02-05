@@ -1,116 +1,149 @@
 !!!
 %html
-	%head
-		%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-			%title
-				Proyectual
-			= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-			= javascript_include_tag 'application', 'data-turbolinks-track' => true
-			= csrf_meta_tags
-			= yield(:head)
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+      %title
+        Proyectual
+      = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+      = javascript_include_tag 'application', 'data-turbolinks-track' => true
+      = csrf_meta_tags
+      = yield(:head)
 
-	%body{:class => "#{controller_name} #{action_name}"}
-		%nav.no-gutter
-			.container-fluid
-				.col-xs-12.col-sm-6.col-md-6.box
-					.col-xs-9.col-sm-6.col-md-6
-						= link_to(root_path, class: 'logo') do
-							= image_tag('logo.png')
-					.col-xs-3.col-sm-6.col-md-6
-						%button.c-hamburger.c-hamburger--htx.pull-right
-							%span
-								toggle menu
-				.col-xs-6.col-sm-6.col-md-6.box.second-menu.hidden-xs
-					.col-md-6
-						= link_to "Get Tickets", "http://www.residentadvisor.net/promoter.aspx?id=19688", class: 'btn btn-nav btn-sm'
+  %body{:class => "#{controller_name} #{action_name}"}
+    %nav
+      .container
+        .no-gutter
+          .col-xs-12.col-sm-6.col-md-5.box
+            .col-xs-9.col-sm-6.col-md-6
+              = link_to(root_path, class: 'logo') do
+                = image_tag('logo.png')
+            .col-md-6.hidden-xs
+              %ul.list-inline.social-buttons-nav.pull-right
+                %li
+                  %p FOLLOW
+                %li
+                  .hline
+                %li
+                  = link_to "http://www.facebook.com/proyectual", :target => '_blank' do
+                    %i.fa.fa-facebook
+                %li
+                  = link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
+                    %i.fa.fa-instagram
+                %li
+                  = link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
+                    %i.fa.fa-twitter
+                %li
+                  = link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
+                    %i.fa.fa-youtube
+          .col-xs-4.col-sm-4.col-md-2.box.text-center
+            %button.c-hamburger.c-hamburger--htx
+              %span
+                toggle menu
+          .col-xs-12.col-sm-6.col-md-5.box
+            .col-md-6.hidden-xs
+              %ul.list-inline.social-buttons-nav
+                %li
+                  %p LANG
+                %li
+                  .hline
+                %li
+                  = link_to "http://www.facebook.com/proyectual", :target => '_blank' do
+                    %p ENG
+                %li
+                  = link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
+                    %p ESP
+                %li
+                  = link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
+                    %p CAT
+            .col-md-6
+              = link_to "STAY UPDATED", "http://www.residentadvisor.net/promoter.aspx?id=19688", class: 'btn btn-nav btn-sm pull-right'
 	
-					.col-md-6
-						%ul.list-inline.social-buttons-nav.pull-right
-							%li
-								= link_to "http://www.facebook.com/proyectual", :target => '_blank' do
-									%i.fa.fa-facebook
-							%li
-								= link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
-									%i.fa.fa-instagram
-							%li
-								= link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
-									%i.fa.fa-twitter
-							%li
-								= link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
-									%i.fa.fa-youtube
-							%li
-								= link_to "https://vimeo.com/user13110331", :target => '_blank' do
-									%i.fa.fa-vimeo
-		.menu-left.hidden-xs
-		.menu-right
-			.menu-inner
-				= link_to('News', news_index_path)
-				= link_to('Events', events_path)
-				= link_to('Artists', artists_path)
-				= link_to('Info/Contact', about_index_path)
-				= link_to('Proyectual TV', videos_path)
+    .menu
+      .menu-inner
+        .container
+          .col-md-4.col-md-offset-2
+            = link_to('About', about_index_path)
+            = link_to('Events', events_path)
+            = link_to('News', news_index_path)
+            = link_to('Artists', artists_path)
+            = link_to('Contact', videos_path)
+          .col-md-4
+            %p
+              Calle tanto 342
+              %br
+              Barcelona
+              %br
+              Spain
+              %br
+              -
+              %br
+              T +39 0873 349384
+              %br
+              M +39 0873 241284
+              %br
+              about@proyectual.info
 
-		= yield
-		%footer.no-gutter
-			.container-fluid
-				.row
-					.col-md-1.text-left
-						= link_to(root_path, class: 'logo') do
-							= image_tag('logo_footer.png')
-					.col-md-3.text-left.footmenu
-						= link_to('Noticias', news_index_path)
-						= link_to('Eventos', events_path)
-						= link_to('Artistas', artists_path)
-						= link_to('Info/Contacto', about_index_path)
-						= link_to('Proyectual TV', videos_path)
-					.col-md-8.text-right
-						%ul.list-inline.social-buttons
-							%li
-								= link_to "http://www.facebook.com/proyectual", :target => '_blank' do
-									%i.fa.fa-facebook
-							%li
-								= link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
-									%i.fa.fa-instagram
-							%li
-								= link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
-									%i.fa.fa-twitter
-							%li
-								= link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
-									%i.fa.fa-youtube
-							%li
-								= link_to "https://vimeo.com/user13110331", :target => '_blank' do
-									%i.fa.fa-vimeo
-						%ul.list-inline.quicklinks
-							%li
-								%a{:href => "#"} Privacy Policy
-							%li
-								%a{:href => "#"} Terms of Use
-						%span.copyright
-							© Proyectual 2016.
-							= link_to 'http://www.wemakenoise.tv', target: '_blank' do
-								Made with
-								%i.fa.fa-heart
-								by NOISE
+    = yield
+    %footer.no-gutter
+      .container-fluid
+        .row
+          .col-md-1.text-left
+            = link_to(root_path, class: 'logo') do
+              = image_tag('logo_footer.png')
+          .col-md-3.text-left.footmenu
+            = link_to('Noticias', news_index_path)
+            = link_to('Eventos', events_path)
+            = link_to('Artistas', artists_path)
+            = link_to('Info/Contacto', about_index_path)
+            = link_to('Proyectual TV', videos_path)
+          .col-md-8.text-right
+            %ul.list-inline.social-buttons
+              %li
+                = link_to "http://www.facebook.com/proyectual", :target => '_blank' do
+                  %i.fa.fa-facebook
+              %li
+                = link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
+                  %i.fa.fa-instagram
+              %li
+                = link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
+                  %i.fa.fa-twitter
+              %li
+                = link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
+                  %i.fa.fa-youtube
+              %li
+                = link_to "https://vimeo.com/user13110331", :target => '_blank' do
+                  %i.fa.fa-vimeo
+            %ul.list-inline.quicklinks
+              %li
+                %a{:href => "#"} Privacy Policy
+              %li
+                %a{:href => "#"} Terms of Use
+            %span.copyright
+              © Proyectual 2016.
+              = link_to 'http://www.wemakenoise.tv', target: '_blank' do
+                Made with
+                %i.fa.fa-heart
+                by NOISE
 
 :javascript
-	$('.c-hamburger').click(function(){
-		$(this).toggleClass('is-active');
-		$('.menu-inner, .menu-left, .menu-right').toggleClass('active');
-	});
-	$('body').jpreLoader({
-		loaderVPos: '0%',
-		autoClose: true,
-		showPercentage: false,
-	}, function() {
+  $('.c-hamburger').click(function(){
+    $(this).toggleClass('is-active');
+    $('.menu').toggleClass('active').fadeToggle("slow", "linear");
+  });
+  $('body').jpreLoader({
+    loaderVPos: '0%',
+    autoClose: true,
+    showPercentage: false,
+  }, function() {
 		
-	});
-	$(window).on('scroll', function(){
-		if ($(this).scrollTop() > 100){
-			$('nav').addClass('shrink');
-			$('#tickets').removeClass('btn-white').addClass('btn-black');
-		}
-		else {
-			$('nav').removeClass('shrink');
-			$('#tickets').removeClass('btn-black').addClass('btn-white');
-		}
-	});
+  });
+  $(window).on('scroll', function(){
+    if ($(this).scrollTop() > 100){
+      $('nav').addClass('shrink');
+      $('#tickets').removeClass('btn-white').addClass('btn-black');
+    }
+    else {
+      $('nav').removeClass('shrink');
+      $('#tickets').removeClass('btn-black').addClass('btn-white');
+    }
+  });
