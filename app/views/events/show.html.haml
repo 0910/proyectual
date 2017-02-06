@@ -1,24 +1,20 @@
 %section#events.grid.bg-grey
   .no-gutter.splashes
-    - if @event.images.empty?
-      .col-md-12.header.text-center{:style => "background-image: image-url('image-not-available.jpg')"}
-    - else
-      - @event.images.each do |image|
-        .col-md-12.header.text-center
-          .ph{:style => "background-image: url(#{image.file.url(:large)})"}
-          .gradient
-          .vcenter
-            %h1.section-heading= @event.name
-            %ul.list-inline.social-buttons
-              %li
-                = link_to(@event.facebook) do
-                  %i.fa.fa-facebook
-              %li
-                = link_to(@event.website) do
-                  %i.fa.fa-link
-              %li
-                = link_to(@event.resident_advisor) do
-                  %i.fa.fa-instagram
+    .col-md-12.header.text-center
+      .ph{:style => "background-image: url(#{@event.images.first.file.url(:large)})"}
+      .gradient
+      .vcenter
+        %h1.section-heading= @event.name
+        %ul.list-inline.social-buttons
+          %li
+            = link_to(@event.facebook) do
+              %i.fa.fa-facebook
+          %li
+            = link_to(@event.website) do
+              %i.fa.fa-link
+          %li
+            = link_to(@event.resident_advisor) do
+              %i.fa.fa-instagram
   .container
     .row.subsection
       .col-md-2.col-md-offset-5.hexagon.text-center
