@@ -1,15 +1,52 @@
-%section.grid.bg-black.no-gutter
-	.col-md-12.about-img
-		= image_tag('about.jpg')
-	.col-md-12.section-subinfo.white
-		.section-box
-			.section-body.text-white
-				PROYECTUAL es un equipo de profesionales vinculados al mundo de la música electrónica, que lleva dirigiendo eventos de alta convocatoria como productores, promotores y mánagers de clubes desde el 2005. Más de una década avala una trayectoria dedicada a programar artistas de prestigio internacional que consolidan en una propuesta tan singular como única: el OFF AT FÒRUM, una cita multitudinaria que se celebra desde hace tres años en la semana del Sónar, el momento del año con más movimiento de aficionados a la música avanzada en la ciudad. 
-				%br
-				%br
-				La calidad es uno de los valores ineludibles dentro de la filosofía de PROYECTUAL, un aspecto que se traduce en la constante optimización del sonido, en una programación a la altura de las grandes citas internacionales, en el trato cercano con el público y en la singularidad de sus enclaves, atributos que confirman año tras año con la puesta en marcha de experiencias extraordinarias en espacios inusuales como La Mansión de Esplugues, el Poble Espanyol, Ghoa Beach Club, The One, OFF AT FÒRUM o en alta mar, con el ya célebre barco-club “Xclusive Boat”. 
-				%br
-				%br
-				La estricta configuración de un line-up acorde a su filosofía ha reunido a artistas y sellos de referencia dentro del universo de la música electrónica. Así lo confirman las colaboraciones con Crew Love (USA), Diynamic (DE), Kompakt (DE), Circoloco (IT) Cocoon (DE) o con el reconocido DGLT FESTIVAL (NL), con quienes co-producen su evento en Barcelona y la inclusión de nombres como Maceo Plex, Jamie Jones, Seth Troxler, Sven Väth, Miss Kittin, Paul Kalkbrenner, Mathew Dear, Jeff Mills, Motor City Drum Ensemble, Todd Terje o Soul Clap, representantes de una escena en permanente renovación que construye, en definitiva, el espíritu vanguardista de PROYECTUAL.
-			
-	
+%section#about.grid.bg-grey
+  .no-gutter.splashes
+    .col-md-12.header.text-center
+      %h1.section-heading.vcenter
+        About Us
+      .gradient
+  .container
+    .row.subsection
+      .col-md-2.col-md-offset-5.hexagon.text-center
+        %h2.section-heading I
+      .col-md-12
+        %h2.section-heading.text-center.no-margin
+          Introduction
+    .row
+      .col-md-10.col-md-offset-1
+        .row
+          .col-md-6.grid-item
+            .section-body
+              %p
+                PROYECTUAL es un equipo de profesionales vinculados al mundo de la música electrónica, que lleva dirigiendo eventos de alta convocatoria como productores, promotores y mánagers de clubes desde el 2005. Más de una década avala una trayectoria dedicada a programar artistas de prestigio internacional que consolidan en una propuesta tan singular como única: el OFF AT FÒRUM, una cita multitudinaria que se celebra desde hace tres años en la semana del Sónar, el momento del año con más movimiento de aficionados a la música avanzada en la ciudad. 
+                %br
+                %br
+                La calidad es uno de los valores ineludibles dentro de la filosofía de PROYECTUAL, un aspecto que se traduce en la constante optimización del sonido, en una programación a la altura de las grandes citas internacionales, en el trato cercano con el público y en la singularidad de sus enclaves, atributos que confirman año tras año con la puesta en marcha de experiencias extraordinarias en espacios inusuales como La Mansión de Esplugues, el Poble Espanyol, Ghoa Beach Club, The One, OFF AT FÒRUM o en alta mar, con el ya célebre barco-club “Xclusive Boat”. 
+          .col-md-6.grid-item
+            .section-body
+              %p
+                La estricta configuración de un line-up acorde a su filosofía ha reunido a artistas y sellos de referencia dentro del universo de la música electrónica. Así lo confirman las colaboraciones con Crew Love (USA), Diynamic (DE), Kompakt (DE), Circoloco (IT) Cocoon (DE) o con el reconocido DGLT FESTIVAL (NL), con quienes co-producen su evento en Barcelona y la inclusión de nombres como Maceo Plex, Jamie Jones, Seth Troxler, Sven Väth, Miss Kittin, Paul Kalkbrenner, Mathew Dear, Jeff Mills, Motor City Drum Ensemble, Todd Terje o Soul Clap, representantes de una escena en permanente renovación que construye, en definitiva, el espíritu vanguardista de PROYECTUAL.
+%section.bg-dark-grey.offset
+  .container
+    .row.subsection
+      .col-md-2.col-md-offset-5.hexagon.text-center
+        %h2.section-heading II
+      .col-md-12
+        %h2.section-heading.text-center
+          Facts
+    .row
+      %ul.timeline
+        - @events.each do |event|
+          %li
+            .timeline-image{:style => "background-image: url(#{event.video_cover.url(:large)})"}
+              .hexagon-mask
+            .timeline-panel
+              .timeline-heading
+                %h4
+                  #{event.name}
+              .timeline-body
+                %p
+                  #{truncate(event.description, :length => 240)}
+
+    .row
+      .col-md-2.col-md-offset-5.text-center
+        %a.gotop

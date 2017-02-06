@@ -1,30 +1,17 @@
-%section.grid
-  .container-fluid
-    .row.no-gutter
-      - @artists.each do |artist|
-        .col-md-6.col-sm-6.grid-item
-          - if artist.images.empty?
-            = link_to(artist_path(artist), class: 'grid-link') do
-              .grid-hover
-                .grid-hover-content
-                  .lines
-                    .line.top
-                    .line.right
-                    .line.bottom
-                    .line.left
-                  %p #{artist.name}
-              .ph.md{:style => "background-image: image-url('image-not-available.jpg')"}
-
-          - else
-            - artist.images.each do |image|
-              - if image.cover == true
-                = link_to(artist_path(artist), class: 'grid-link') do
-                  .grid-hover
-                    .grid-hover-content
-                      .lines
-                        .line.top
-                        .line.right
-                        .line.bottom
-                        .line.left
-                      %p #{artist.name}
-                  .ph.md{:style => "background-image: url(#{image.file.url(:medium)})"}
+%section#artists.bg-dark-grey
+  .no-gutter.splashes
+    .col-md-12.header.text-center
+      %h1.section-heading.vcenter
+        Artists
+      .gradient2
+  .container
+    .row
+      - @artists.keys.sort.each do |letter|
+        .col-md-3
+          .row.subsection
+            .col-md-2.hexagon.text-center
+              %h2.section-heading= letter
+          - @artists[letter].each do |artist|
+            .row
+              = link_to(artist) do
+                %p= artist.name

@@ -24,6 +24,7 @@ ActiveAdmin.register Artist do
   show do |p|
     attributes_table do
       row :name
+      row :bio
       row :slug
       row :website
       row :facebook
@@ -41,6 +42,7 @@ ActiveAdmin.register Artist do
     f.inputs 'Details' do
       f.semantic_errors
       f.input :name, :require => true
+      f.input :bio
       f.input :website
       f.input :facebook
       f.input :resident_advisor

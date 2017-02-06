@@ -7,10 +7,10 @@
   .container
     .row
       .col-md-2.col-md-offset-5.hexagon.text-center
-        %h2.section-heading by date
+        %h2.section-heading all
     .row
       .vert-line
-    .no-gutter
+    .row.no-gutter
       - @news.each do |news|
         .col-xs-12.col-sm-6.col-md-12.grid-item
           - if news.images.empty?
@@ -30,7 +30,7 @@
                 %h4
                   #{news.title}
                 %p
-                  #{news.body}
+                  #{truncate(news.body, :length => 240)}
           - else
             - news.images.each do |image|
               - if image.cover == true
@@ -49,9 +49,9 @@
                     %h4
                       #{truncate(news.title, :length => 40)}
                     %p
-                      #{news.body}
-  .row
-    .vert-line
-  .row
-    .col-md-2.col-md-offset-5.text-center
-      %a.gotop
+                      #{truncate(news.body, :length => 240)}
+    .row
+      .vert-line
+    .row
+      .col-md-2.col-md-offset-5.text-center
+        %a.gotop

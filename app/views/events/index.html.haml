@@ -32,7 +32,7 @@
                       %h4
                         #{truncate(event.name, :length => 40)}
                       %p
-                        #{event.description}
+                        #{truncate(event.description, :length => 240)}
                 - else
                   - event.images.each do |image|
                     - if image.cover == true
@@ -51,8 +51,8 @@
                           %h4
                             #{truncate(event.name, :length => 40)}
                           %p
-                            #{event.description}
-        .row
+                            #{truncate(event.description, :length => 240)}
+        .row.hidden-xs
           .vert-line
     .row
       .col-md-2.col-md-offset-5.text-center

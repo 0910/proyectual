@@ -15,9 +15,6 @@
         .row
           .col-md-12
             .section-body
-              %p.text-muted
-                #{@news.date.to_date.to_formatted_s(:long)}
-            .section-body
               #{simple_format(@news.body)}
     .row.text-center
       %ul.list-inline.social-buttons
@@ -34,3 +31,6 @@
         %li
           = link_to('#') do
             %i.fa.fa-instagram
+    .row
+      .col-md-2.col-md-offset-5.text-center
+        %a.gotop

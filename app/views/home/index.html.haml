@@ -15,7 +15,7 @@
                 #{splash.call_to_action}
             %p
               #{splash.subtitle}
-  .isologo.vcenter
+  .isologo.vcenter.visible-lg
 
 %section#about.grid.text-center.bg-grey
   .container-fluid
@@ -39,7 +39,7 @@
     .row
       .no-gutter
         - @news.each do |news|
-          .col-xs-12.col-sm-6.col-md-12.grid-item
+          .col-xs-12.col-sm-12.col-md-12.grid-item
             - if news.images.empty?
               .col-md-6
                 = link_to(news_path(news), class: 'grid-link') do
@@ -59,12 +59,12 @@
                   %h4
                     #{news.title}
                   %p
-                    #{news.body}
+                    #{truncate(news.body, :length => 240)}
             - else
               - news.images.each do |image|
                 - if image.cover == true
                   .row.no-gutter
-                    = link_to(news_path(news), class: 'col-md-6 grid-link') do
+                    = link_to(news_path(news), class: 'col-sm-6 col-md-6 grid-link') do
                       .grid-hover
                         .grid-hover-content
                           .lines
@@ -74,14 +74,14 @@
                             .line.left
                           %p read more
                       .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
-                    .col-md-6.grid-caption.text-left
+                    .col-sm-6.col-md-6.grid-caption.text-left
                       %p.text-muted
                         #{news.date.to_date.to_formatted_s(:long)}
                       %h4
                         #{truncate(news.title, :length => 40)}
                       %p
-                        #{news.body}
-    .row
+                        #{truncate(news.body, :length => 240)}
+    .row.hidden-xs
       .vert-line
     .row.text-center
       = link_to "View all news", news_index_path, class: 'btn btn-green btn-sm'

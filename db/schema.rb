@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205180811) do
+ActiveRecord::Schema.define(version: 20170206040657) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20170205180811) do
     t.string   "resident_advisor", limit: 255
     t.string   "facebook",         limit: 255
     t.string   "soundcloud",       limit: 255
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "slug",             limit: 255
-    t.string   "available",        limit: 255, default: "Yes"
-    t.string   "bio",              limit: 255
+    t.string   "available",        limit: 255,   default: "Yes"
+    t.text     "bio",              limit: 65535
   end
 
   create_table "event_artists", force: :cascade do |t|

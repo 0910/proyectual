@@ -1,6 +1,11 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.all.order(name: :asc)
+    @artists = {}
+    Artist.all.each do |artist|
+      letter = artist.name.slice(0,1).upcase
+      @artists[letter] ||= []
+      @artists[letter] << artist 
+    end
   end
 
   def show
