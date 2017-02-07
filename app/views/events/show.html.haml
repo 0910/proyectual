@@ -17,11 +17,10 @@
               %i.fa.fa-instagram
   .container
     .row.subsection
-      .col-md-2.col-md-offset-5.hexagon.text-center
+      .col-md-2.col-md-offset-5.hexagon.text-center.neg-margin
         %h2.section-heading I
       .col-md-12
-        %h2.section-heading.text-center.no-margin
-          About this event
+        %h2.section-heading.text-center= t('events.about_this_event')
     .row
       .col-md-10.col-md-offset-1
         .row
@@ -32,7 +31,7 @@
             .row
               .col-md-12
                 .section-body
-                  %p Artists who played:
+                  %p= t('events.artists_who_played')
             .row
               .col-md-12
                 .section-body
@@ -43,8 +42,7 @@
       .col-md-2.col-md-offset-5.hexagon.text-center
         %h2.section-heading II
       .col-md-12
-        %h2.section-heading.text-center
-          Aftermovie
+        %h2.section-heading.text-center= t('events.after_movie')
       .col-md-8.col-md-offset-2
         .video
           .video-cover{:style => "background-image: url(#{@event.video_cover.url(:large)})"}
@@ -55,8 +53,7 @@
       .col-md-2.col-md-offset-5.hexagon.text-center
         %h2.section-heading III
       .col-md-12
-        %h2.section-heading.text-center
-          Event History
+        %h2.section-heading.text-center= t('events.event_history')
     .row
       %ul.timeline
         - @events.each do |event|
@@ -71,6 +68,8 @@
                 %p
                   #{event.description}
 
+    .row.hidden-xs
+      .vert-line
     .row
-      .col-md-2.col-md-offset-5.text-center
-        %a.gotop
+      .col-md-2.col-md-offset-5.text-center.margin
+        = link_to('', '#', class: 'gotop')

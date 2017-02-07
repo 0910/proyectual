@@ -1,9 +1,9 @@
-%section#events.grid.bg-grey
+%section#events.grid.bg-dark-grey
   .no-gutter.splashes
     .col-md-12.header.text-center
       %h1.section-heading.vcenter
-        Events
-      .gradient
+        = t('events.title')
+      .gradient2
   .container
     - @years.each do |year|
       .year
@@ -15,10 +15,10 @@
         .row
           .no-gutter
             - year.events.each do |event|
-              .col-xs-12.col-sm-6.col-md-12.grid-item
+              .col-xs-12.col-sm-12.col-md-12.grid-item
                 - if event.images.empty?
                   .row.no-gutter
-                    = link_to(event_path(event), class: 'col-md-6 grid-link') do
+                    = link_to(event_path(event), class: 'col-sm-6 col-md-6 grid-link') do
                       .grid-hover
                         .grid-hover-content
                           .lines
@@ -26,9 +26,9 @@
                             .line.right
                             .line.bottom
                             .line.left
-                          %p read more
+                          %p= t('events.view_more') 
                       .ph.image-not-available
-                    .col-md-6.grid-caption.text-left
+                    .col-sm-6.col-md-6.grid-caption.text-left
                       %h4
                         #{truncate(event.name, :length => 40)}
                       %p
@@ -37,7 +37,7 @@
                   - event.images.each do |image|
                     - if image.cover == true
                       .row.no-gutter
-                        = link_to(event_path(event), class: 'col-md-6 grid-link') do
+                        = link_to(event_path(event), class: 'col-sm-6 col-md-6 grid-link') do
                           .grid-hover
                             .grid-hover-content
                               .lines
@@ -45,9 +45,9 @@
                                 .line.right
                                 .line.bottom
                                 .line.left
-                              %p read more
+                              %p= t('events.view_more') 
                           .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
-                        .col-md-6.grid-caption.text-left
+                        .col-sm-6.col-md-6.grid-caption.text-left
                           %h4
                             #{truncate(event.name, :length => 40)}
                           %p
@@ -56,4 +56,4 @@
           .vert-line
     .row
       .col-md-2.col-md-offset-5.text-center
-        %a.gotop
+        = link_to('', '#', class: 'gotop')

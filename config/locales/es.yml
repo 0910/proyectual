@@ -1,3 +1,4 @@
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -19,47 +20,46 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+es:
   active_admin:
     dashboard_welcome:
-      welcome: "Welcome to Proyectual."
+      welcome: "Bienvenido a Proyectual."
       call_to_action: "This product is under development."
     powered_by: "Powered by Noise - www.wemakenoise.co"
   nav:
-    follow: "FOLLOW"
-    stay_updated: "Stay Updated"
-    lang: "Lang"
+    follow: "SEGUIR"
+    stay_updated: "Mantente Conectado"
+    lang: "IDIOMA"
   menu:
     home: "Home"
-    events: "Events"
-    news: "News"
-    artists: "Artists"
-    about: "About"
+    events: "Eventos"
+    news: "Noticias"
+    artists: "Artistas"
+    about: "Acerca"
   about:
-    title: "About"
+    title: "Nosotros"
     short_about: ""
-    call_to_action: "Get to know us"
+    call_to_action: "Conócenos"
     large_info1: ""
     large_info2: ""
     large_info3: ""
-    introduction: "Introduction"
-    facts: "Facts"
+    introduction: "Introducción"
+    facts: "Hitos"
   news:
-    title: "News"
-    view_all: "View all News"
-    read_more: "Read More"
-    all: "All"
-    share: "SHARE"
+    title: "Noticias"
+    view_all: "Ver todas las noticias"
+    read_more: "Leer más"
+    all: "Todas"
+    share: "COMPARTIR"
   events:
-    title: "Events"
-    view_more: "View More"
-    about_this_event: "About this Event"
+    title: "Eventos"
+    view_more: "Ver más"
+    about_this_event: "Acerca de este evento"
     after_movie: "Aftermovie"
-    event_history: "Event History"
-    artists_who_played: "Artists who played"
+    event_history: "Historia del evento"
+    artists_who_played: "Artistas que han tocado"
   artists:
-    title: "artists"
-    about: "About"
+    title: "artistas"
+    about: "Acerca"
     media: "Media"
-    has_been_played_at: "Has been played at:"
-
+    has_been_played_at: "Ha tocado en:"

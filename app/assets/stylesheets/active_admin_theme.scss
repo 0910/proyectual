@@ -599,3 +599,43 @@ body.logged_out{
 .ms-drop .ms-no-results {
     display: none;
 }
+/* 09. TRanslations */
+
+.active_admin .activeadmin-translations > fieldset.inputs {
+    border-bottom: 1px solid #ddd;
+}
+.active_admin .activeadmin-translations > ul{
+    padding: 0 25px !important;
+    border-bottom: 1px solid #e8e8e8;
+    > li{
+        padding: 1em 0 0 0;
+        a{
+            border-radius: 0px !important;
+            font-size: 1em !important;
+        }
+        a.active{
+            border-radius: 0;
+        }
+    }
+    li.add-locale:hover {
+        border-radius: 0 !important;
+        padding: 0px !important;
+        > ul{
+            background: #f4f4f4 none repeat scroll 0 0;
+            border-radius: 0px !important;
+            box-shadow: none;
+            display: none;
+            font-size: 1em;
+            font-weight: normal;
+            padding: 0;
+            position: absolute;
+            z-index: 100;
+            li{
+                font-size: 1em !important;
+                a{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

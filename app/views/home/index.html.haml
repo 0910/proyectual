@@ -21,19 +21,19 @@
   .container-fluid
     .row
       .col-md-2.col-md-offset-5.hexagon
-        %h2.section-heading ABOUT
+        %h2.section-heading= t('about.title')
     .row
       .col-md-8.col-md-offset-2
         .section-body.section-box-alt
           %p
             PROYECTUAL es un equipo de profesionales vinculados al mundo de la música electrónica, que lleva organizando eventos de alta convocatoria como productores, promotores y mánagers de clubs desde 2005.
-        = link_to "Get to know us", about_index_path
+        = link_to(t('about.call_to_action'), about_index_path)
 
 %section.grid.bg-dark-grey#news
   .container
     .row
       .col-md-2.col-md-offset-5.hexagon
-        %h2.section-heading.text-center NEWS
+        %h2.section-heading.text-center= t('news.title')
     .row
       .vert-line
     .row
@@ -50,7 +50,7 @@
                         .line.right
                         .line.bottom
                         .line.left
-                      %p read more
+                      %p= t('news.read_more')
                   = image_tag('image-not-available.jpg')
               .col-md-6
                 .grid-caption.text-left
@@ -59,7 +59,7 @@
                   %h4
                     #{news.title}
                   %p
-                    #{truncate(news.body, :length => 240)}
+                    #{truncate(news.body, :length => 180)}
             - else
               - news.images.each do |image|
                 - if image.cover == true
@@ -72,7 +72,7 @@
                             .line.right
                             .line.bottom
                             .line.left
-                          %p read more
+                          %p= t('news.read_more')
                       .ph{:style => "background-image: url(#{image.file.url(:medium)})"}
                     .col-sm-6.col-md-6.grid-caption.text-left
                       %p.text-muted
@@ -80,11 +80,11 @@
                       %h4
                         #{truncate(news.title, :length => 40)}
                       %p
-                        #{truncate(news.body, :length => 240)}
+                        #{truncate(news.body, :length => 180)}
     .row.hidden-xs
       .vert-line
     .row.text-center
-      = link_to "View all news", news_index_path, class: 'btn btn-green btn-sm'
+      = link_to(t('news.view_all'), news_index_path, class: 'btn btn-green btn-sm')
 
 :javascript
   $(document).ready(function(){

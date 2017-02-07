@@ -52,7 +52,9 @@ ActiveAdmin.register Event do
       f.input :subtitle, :require => true
       f.input :year, :as => :select
       f.input :featured, :as => :select, :collection => ['No', 'Yes'], :include_blank => false
-      f.input :description
+      f.translated_inputs 'ignored title', switch_locale: true, available_locales: I18n.available_locales do |t|
+        t.input :description
+      end
       f.input :website
       f.input :facebook
       f.input :resident_advisor

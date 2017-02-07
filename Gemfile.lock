@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/fabn/activeadmin-globalize.git
+  revision: 49c219d740a5b4c34b2e6bf0a20e9994d95f1127
+  branch: develop
+  specs:
+    activeadmin-globalize (1.0.0.pre)
+      activeadmin (~> 1.0.0.pre)
+      globalize (>= 3.1.0, < 6.0)
+
+GIT
   remote: git://github.com/mfairburn/activeadmin-select2.git
   revision: 3e471afa092dda250d9ff0165aaee8b43fedf215
   specs:
@@ -133,6 +142,9 @@ GEM
     geocoder (1.2.12)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
     haml (4.0.7)
       tilt
     has_scope (0.6.0)
@@ -208,6 +220,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.9)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -284,6 +299,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_csv_import
   activeadmin (~> 1.0.0.pre1)
+  activeadmin-globalize (~> 1.0.0.pre)!
   activeadmin-select2!
   bootstrap-sass (~> 3.3.5)
   bxslider-rails
@@ -300,6 +316,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.4.0)
   friendly_id
   geocoder
+  globalize (~> 5.0.0)
   haml (~> 4.0.6)
   jbuilder (~> 2.0)
   jquery-rails
@@ -307,6 +324,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.13)
   paperclip
   rails (= 4.2.1)
+  rails-i18n (~> 4.0.0)
   raindrops (~> 0.15.0)
   raphael-rails
   sass-rails (>= 3.2)

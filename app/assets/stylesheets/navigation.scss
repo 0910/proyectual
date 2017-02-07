@@ -28,7 +28,8 @@ nav{
     .logo{
         height: 43px;
         img{
-            height: 100%;
+          width: 162px;
+          margin-top: 3px;
         }
     }
     .btn{
@@ -169,8 +170,8 @@ nav{
 }
 ul.social-buttons-nav li a {
     display: block;
-    font-size: 14px;
-    line-height: 40px;
+    font-size: 1em;
+    line-height: 3em;
     color: #000;
     outline: 0;
     -webkit-transition: all .3s;
@@ -183,8 +184,8 @@ ul.social-buttons-nav li a:active {
     color: #84b6bc;
 }
 ul.social-buttons-nav p{
-  font-size: 14px;
-  line-height:40px;
+  font-size: 1em;
+  line-height: 3em;
   font-weight: 700;
 }
 
@@ -194,7 +195,7 @@ ul.social-buttons-nav p{
     -webkit-transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     margin-top: 20px;
-    text-align: center;
+    text-align: left !important;
     transform: translate(0,-50%);
     a{
         text-decoration: none;
@@ -280,7 +281,7 @@ ul.social-buttons-nav li a {
     background-color: transparent;
     .box{
         padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 32px;
     }
     .container{
       width: calc(100% - 60px);

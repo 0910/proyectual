@@ -5,6 +5,8 @@ class Artist < ActiveRecord::Base
 	has_many :event_artists, :dependent => :destroy
 	has_many :events, :through => :event_artists
 
+  active_admin_translates :bio
+
 	extend FriendlyId
 	friendly_id :name, use: :slugged
 	

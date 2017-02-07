@@ -15,15 +15,15 @@
         .no-gutter
           .col-xs-6.box.visible-xs
             = link_to(root_path, class: 'logo') do
-              = image_tag('logo.png')
+              = image_tag('logo.svg')
           .col-xs-6.col-sm-6.col-md-6.col-lg-5.box.hidden-xs
             .col-xs-9.col-sm-6.col-md-6
               = link_to(root_path, class: 'logo') do
-                = image_tag('logo.png')
+                = image_tag('logo.svg')
             .col-md-6.visible-lg
               %ul.list-inline.social-buttons-nav.pull-right
                 %li
-                  %p FOLLOW
+                  %p= t('nav.follow')
                 %li
                   .hline
                 %li
@@ -38,7 +38,7 @@
                 %li
                   = link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
                     %i.fa.fa-youtube
-          .col-xs-6.col-sm-4.col-md-6.col-lg-2.box.text-center
+          .col-xs-6.col-sm-6.col-md-6.col-lg-2.box.text-center
             %button.c-hamburger.c-hamburger--htx
               %span
                 toggle menu
@@ -46,30 +46,30 @@
             .col-md-6
               %ul.list-inline.social-buttons-nav
                 %li
-                  %p LANG
+                  %p= t('nav.lang')
                 %li
                   .hline
                 %li
-                  = link_to "http://www.facebook.com/proyectual", :target => '_blank' do
+                  = link_to change_locale_path(:en) do
                     %p ENG
                 %li
-                  = link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
+                  = link_to change_locale_path(:es) do
                     %p ESP
                 %li
-                  = link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
+                  = link_to change_locale_path(:ca) do
                     %p CAT
             .col-md-6.visible-lg
-              = link_to "STAY UPDATED", "http://www.residentadvisor.net/promoter.aspx?id=19688", class: 'btn btn-nav btn-sm pull-right'
+              = link_to(t('nav.stay_updated'), "http://www.residentadvisor.net/promoter.aspx?id=19688", class: 'btn btn-nav btn-sm pull-right')
 	
     .menu
       .menu-inner
         .container
           .col-md-4.col-md-offset-2
-            = link_to('Home', root_path)
-            = link_to('Events', events_path)
-            = link_to('News', news_index_path)
-            = link_to('Artists', artists_path)
-            = link_to('About', about_index_path)
+            = link_to(t('menu.home'), root_path)
+            = link_to(t('menu.events'), events_path)
+            = link_to(t('menu.news'), news_index_path)
+            = link_to(t('menu.artists'), artists_path)
+            = link_to(t('menu.about'), about_index_path)
           .col-md-4.hidden-xs
             %p
               Roc Boronat 24, 3-2
@@ -88,25 +88,23 @@
     %footer.no-gutter
       .container-fluid
         .row
-          .col-md-1.text-left.hidden-xs
-            = link_to(root_path, class: 'logo') do
-              = image_tag('logo_footer.png')
-          .col-md-5.text-left.footmenu
+          .col-md-6.col-md-offset-3.text-left.footmenu.text-center
             .row
-              = link_to('Home', root_path)
-              = link_to('Events', events_path)
-              = link_to('News', news_index_path)
-              = link_to('Artists', artists_path)
-              = link_to('About', about_index_path)
-            .row
-              %span.copyright
-                © Proyectual 2016.
-                = link_to 'http://www.wemakenoise.co', target: '_blank' do
-                  Made with
-                  %i.fa.fa-heart
-                  by NOISE
+              = link_to(t('menu.home'), root_path)
+              = link_to(t('menu.events'), events_path)
+              = link_to(t('menu.news'), news_index_path)
+              = link_to(t('menu.artists'), artists_path)
+              = link_to(t('menu.about'), about_index_path)
+        .row
+          .col-md-6.col-md-offset-3.text-left.footmenu.text-center
+            %span.copyright
+              © Proyectual 2016.
+              = link_to 'http://www.wemakenoise.co', target: '_blank' do
+                Made with
+                %i.fa.fa-heart
+                by NOISE
 
-          .col-md-6.text-right.hidden-xs
+          .col-md-6.col-md-offset-3.text-center
             %ul.list-inline.social-buttons
               %li
                 = link_to "http://www.facebook.com/proyectual", :target => '_blank' do
@@ -120,9 +118,6 @@
               %li
                 = link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
                   %i.fa.fa-youtube
-              %li
-                = link_to "https://vimeo.com/user13110331", :target => '_blank' do
-                  %i.fa.fa-vimeo
 
 :javascript
   $('.c-hamburger').click(function(){

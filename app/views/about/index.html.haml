@@ -1,16 +1,14 @@
 %section#about.grid.bg-grey
   .no-gutter.splashes
     .col-md-12.header.text-center
-      %h1.section-heading.vcenter
-        About Us
+      %h1.section-heading.vcenter= t('about.title')
       .gradient
   .container
     .row.subsection
       .col-md-2.col-md-offset-5.hexagon.text-center
         %h2.section-heading I
       .col-md-12
-        %h2.section-heading.text-center.no-margin
-          Introduction
+        %h2.section-heading.text-center.no-margin= t('about.introduction')
     .row
       .col-md-10.col-md-offset-1
         .row
@@ -31,8 +29,7 @@
       .col-md-2.col-md-offset-5.hexagon.text-center
         %h2.section-heading II
       .col-md-12
-        %h2.section-heading.text-center
-          Facts
+        %h2.section-heading.text-center= t('about.facts')
     .row
       %ul.timeline
         - @events.each do |event|
@@ -45,8 +42,10 @@
                   #{event.name}
               .timeline-body
                 %p
-                  #{truncate(event.description, :length => 240)}
+                  #{truncate(event.description, :length => 180)}
 
+        .row.hidden-xs
+          .vert-line
     .row
       .col-md-2.col-md-offset-5.text-center
-        %a.gotop
+        = link_to('', '#', class: 'gotop')

@@ -17,6 +17,8 @@ class Event < ActiveRecord::Base
 
 	belongs_to :year
 
+  active_admin_translates :description
+
 	extend FriendlyId
 	friendly_id :name, use: :slugged
 

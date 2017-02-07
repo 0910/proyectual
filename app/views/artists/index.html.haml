@@ -1,13 +1,12 @@
 %section#artists.bg-dark-grey
   .no-gutter.splashes
     .col-md-12.header.text-center
-      %h1.section-heading.vcenter
-        Artists
+      %h1.section-heading.vcenter= t('artists.title')
       .gradient2
   .container
     .row
       - @artists.keys.sort.each do |letter|
-        .col-md-3
+        .col-xs-12.col-sm-3.col-md-3.letter
           .row.subsection
             .col-md-2.hexagon.text-center
               %h2.section-heading= letter
@@ -15,3 +14,9 @@
             .row
               = link_to(artist) do
                 %p= artist.name
+:javascript
+  $(function(){
+    var m = new Masonry($('.grid').get()[0], {
+      itemSelector: ".letter"
+    });
+  });

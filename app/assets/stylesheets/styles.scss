@@ -9,15 +9,11 @@ body{
 }
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:200,400,700);
 
 .container{
   width: 80%;
-}
-.site-canvas{
-    margin-left: 100px;
 }
 .text-muted {
     color: #777777;
@@ -25,11 +21,14 @@ body{
 .text-center{
   text-align: center;
 }
-.text-primary {
-    color: #84b6bc
-}
 .no-margin{
   margin:0 !important;
+}
+.neg-margin{
+  margin-top: -90px !important;
+}
+.margin{
+  margin-top: 60px !important;
 }
 p {
     font-size: 1em;
@@ -82,7 +81,9 @@ h1{
 h2{
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-h4,
+h4{
+  color: #5bc6d0;
+}
 h5,
 h6 {
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -118,9 +119,9 @@ h6 {
   background-repeat: no-repeat;
   background-position: center;
   padding: 20px 0;
-  margin-bottom: 30px;
-  margin-top: 15px;
+  margin-bottom: 0px;
 }
+
 .gotop{
   background-image: image-url('top.svg');
   background-repeat: no-repeat;
@@ -146,30 +147,6 @@ h6 {
   position: relative;
 }
 
-section.full-height{
-    height: 100%;
-    .section-box{
-        padding: 0 45px;
-    }
-    .slider{
-        height: 100%;
-    }
-    > div{
-        height: 100%;
-    }
-    .full-image{
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        a.video-button{
-            font-size: 68px;
-            color: #fff;
-            text-align: center;
-            display: block;
-        }
-    }
-}
 .vcenter{
     position: relative;
     top: 50%;
@@ -231,6 +208,11 @@ section.full-height{
     background-color: #000;
 }
 
+.btn{
+  transition: all ease .5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+}
 .btn-lg{
     font-size: 14px;
     font-family: 'Montserrat';
@@ -239,6 +221,7 @@ section.full-height{
 }
 .btn-sm{
     padding: 5px 35px;
+    font-size: 1em;
 }
 .btn-primary {
     color: #fff;
@@ -509,7 +492,7 @@ header{
           color: #fff;
           margin: 0;
           font-weight: 700;
-          font-size: 2.5em;
+          font-size: 1.5em;
         }
         p{
           color: #fff;
@@ -523,7 +506,17 @@ header{
   }
 }
 
+/* Sections */
 
+section{
+  .header{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    text-transform: uppercase;
+  }
+}
 section:last-child{
     margin-bottom: 0px;
 }
@@ -538,6 +531,7 @@ section h2.section-heading {
     letter-spacing: 3px;
     font-weight: 300;
     text-transform: uppercase;
+    margin-left: 3px;
 }
 section h3.section-heading {
     font-size: 24px;
@@ -556,17 +550,6 @@ section .section-img{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-}
-
-section h3.section-subheading, section h4.section-subheading {
-    font-size: 12px;
-    text-transform: none;
-    color: #606060;
-    text-transform: uppercase;
-    margin: 0;
-    font-family: 'Montserrat';
-    font-weight: 700;
-    letter-spacing: .75px;
 }
 
 section .section-body{
@@ -673,7 +656,7 @@ section .section-box-double{
             font-family: 'Montserrat';
             font-weight: 400;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
             top: 50%;
             margin-top: 0;
             position: relative;
@@ -708,13 +691,11 @@ section .section-box-double{
       margin: 0 auto;
       padding: 45px;
       h4 {
-        font-family: 'Crimson Text', serif;
+        font-family: 'montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
         margin: 0;
-        font-size: 2em;
-        color: #fff;
+        font-size: 1.5em;
         margin-top: 0px;
         margin-top: 5px;
-        text-transform: uppercase;
       }
       p {
         margin: 0;
@@ -752,14 +733,6 @@ section .section-box-double{
 .grid * {
     z-index: 2
 }
-.row-async:nth-child(even){
-    p.year-number{
-        right: 0;
-    }
-    .col-async-left{
-        float:right;
-    }
-}
 
 /* About */
 
@@ -778,24 +751,20 @@ body.home{
     }
     p{
       color: #fff;
-      font-family: 'Crimson Text', serif;
-      font-size: 2em;
+      font-family: 'montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.5em;
       font-weight: normal;
       line-height: 1.35;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      margin: 1em 0;
     }
   }
 }
 body.about{
   .header{
     background-image: image-url('about.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 480px;
-    text-transform: uppercase;
   }
   section#about{
     .subsection:first-child .hexagon{
@@ -834,11 +803,6 @@ section#news{
   }
   .header{
     background-image: image-url('events.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 480px;
-    text-transform: uppercase;
   }
 }
 body.news{
@@ -926,6 +890,9 @@ body.artists.show{
   .grid-item{
     margin-top: 30px;
   }
+  a{
+    text-align:center;
+  }
 }
 
 /* Contact */
@@ -1002,7 +969,12 @@ section#contact .text-danger {
 footer {
   padding: 60px 50px;
   text-align: center;
-  background-color: #000;
+  background-color: #181a1b;
+  .logo{
+    img{
+      width: 35px;
+    }
+  }
   .footmenu{
     font-weight: 300;
     a{
@@ -1042,7 +1014,7 @@ ul.social-buttons {
 ul.social-buttons li a {
     display: block;
     border-radius: 100%;
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 40px;
     color: #fff;
     outline: 0;
@@ -1251,17 +1223,8 @@ body {
 body.events{
   section{
     padding: 0px 0 90px 0;
-    .hexagon{
-      margin-bottom: 0;
-      margin-top: 0;
-    }
     .header{
       background-image: image-url('events.jpg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      height: 480px;
-      text-transform: uppercase;
     }
     .year:first-child .hexagon{
       margin-top: -90px;
@@ -1292,19 +1255,13 @@ body.events.show{
     h1.section-heading{
       margin-bottom: 0;
     }
-    .subsection:first-child .hexagon{
-      margin-top: -90px;
-      h2.section-heading.text-center{
-        margin-top: 0;
-      }
-    }
   }
   section.offset{
     margin-top: -270px;
     padding-top: 180px;
   }
   .hexagon{
-    padding: 0;
+    padding: 1px;
     margin-top: 30px;
   }
   .grid-item{
@@ -1344,31 +1301,6 @@ body.events.show{
   }
   .video-play{
   }
-  .past-event:nth-child(odd){
-    .event-item{
-      float:left;
-    }
-    .event-caption{
-      float:left;
-      text-align: right;
-    }
-    .event-blank{
-      float:right;
-    }
-  }
-  .past-event:nth-child(even){
-    .event-item{
-      float:right;
-    }
-    float: right;
-    .event-caption{
-      float:right;
-      text-align: left;
-    }
-    .event-blank{
-      float:left;
-    }
-  }
 }
 /* Timeline */
 
@@ -1386,7 +1318,7 @@ body.events.show{
   width: 1px;
   background-color: #5bc6d0;
   left: 40px;
-  margin-left: -1.5px;
+  margin-left: -0.5px;
 }
 .timeline > li {
   margin-bottom: 50px;
@@ -1467,6 +1399,7 @@ body.events.show{
 .timeline .timeline-heading h4 {
   margin-top: 0;
   color: #5bc6d0;
+  font-size: 1.5em;
 }
 .timeline .timeline-heading h4.subheading {
   text-transform: none;
@@ -1476,8 +1409,25 @@ body.events.show{
   margin-bottom: 0;
 }
 @media (min-width:768px) {
+  .margin{
+    margin-top: 0 !important;
+  }
   body{
-    font-size: 13px;
+    font-size: 11px;
+  }
+  header{
+    height: 80%;
+    .splashes{
+      height: 100%;
+      .splash{
+        height: 50%;
+        .caption .inner{
+          h1{
+            font-size: 2.5em;
+          }
+        }
+      }
+    }
   }
   .grid-item:nth-child(odd){
     .grid-link{
@@ -1495,7 +1445,7 @@ body.events.show{
       float: right;
       border-left: 1px solid #5bc6d0;
       position: relative;
-      left: -0.5px;
+      left: -1px;
     }
     .grid-caption{
       float: left;
@@ -1556,6 +1506,12 @@ body.events.show{
   }
 }
 @media (min-width: 1200px) {
+  body{
+    font-size: 11px;
+  }
+  section h1.section-heading {
+    font-size: 4.5em;
+  }
   .timeline > li {
     min-height: 170px;
   }
@@ -1582,9 +1538,6 @@ body.events.show{
       }
     }
   }
-  section h1.section-heading {
-    font-size: 62px;
-  }
   body.show{
     .grid-item:first-child{
       float: left;
@@ -1600,5 +1553,10 @@ body.events.show{
         padding-left: 5%;
       }
     }
+  }
+}
+@media (min-width: 1400px) {
+  body{
+    font-size: 13px;
   }
 }

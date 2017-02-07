@@ -39,7 +39,9 @@ gem 'select2-rails'
 gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem 'swipebox'
 gem 'active_admin_csv_import'
-
+gem 'rails-i18n', '~> 4.0.0' # for Rails 4
+gem 'globalize', '~> 5.0.0'
+gem 'activeadmin-globalize', '~> 1.0.0.pre', github: 'fabn/activeadmin-globalize', branch: 'develop'
 
 group :development do
     gem 'capistrano'
