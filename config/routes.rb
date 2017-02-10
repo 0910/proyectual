@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :news, only: [:show, :index]
     resources :videos, only: [:index]
     get '/about' => 'about#show', :defaults => { :id => 1 }
-    get '/v2' => 'home#v2'
+    get '/home' => 'home#v2'
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
