@@ -6,14 +6,13 @@ Rails.application.routes.draw do
     resources :news, only: [:show, :index]
     resources :videos, only: [:index]
     get '/about' => 'about#show', :defaults => { :id => 1 }
-    get '/home' => 'home#v2'
+    root 'home#index'
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get '/:locale' => 'home#v2'
+  get '/:locale' => 'home#index'
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
-  root 'home#index'
 
 end
