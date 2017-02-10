@@ -1,24 +1,25 @@
 %section#artists.bg-dark-grey
-  .no-gutter.splashes
-    - if @artist.images.empty?
-      .col-md-12.header.text-center{:style => "background-image: image-url('image-not-available.jpg')"}
-    - else
-      - @artist.images.each do |image|
-        .col-md-12.header.text-center
-          .ph{:style => "background-image: url(#{image.file.url(:large)})"}
-          .gradient2
-          .vcenter
-            %h1.section-heading= @artist.name
-            %ul.list-inline.social-buttons
-              %li
-                = link_to(@artist.facebook) do
-                  %i.fa.fa-facebook
-              %li
-                = link_to(@artist.soundcloud) do
-                  %i.fa.fa-soundcloud
-              %li
-                = link_to(@artist.resident_advisor) do
-                  %i.fa.fa-instagram
+  .container-fluid
+    .row.no-gutter.splashes
+      - if @artist.images.empty?
+        .col-md-12.header.text-center{:style => "background-image: image-url('image-not-available.jpg')"}
+      - else
+        - @artist.images.each do |image|
+          .col-md-12.header.text-center
+            .ph{:style => "background-image: url(#{image.file.url(:large)})"}
+            .gradient2
+            .vcenter
+              %h1.section-heading= @artist.name
+              %ul.list-inline.social-buttons
+                %li
+                  = link_to(@artist.facebook) do
+                    %i.fa.fa-facebook
+                %li
+                  = link_to(@artist.soundcloud) do
+                    %i.fa.fa-soundcloud
+                %li
+                  = link_to(@artist.resident_advisor) do
+                    %i.fa.fa-instagram
   .container
     .row.subsection
       .col-md-2.col-md-offset-5.hexagon.text-center
@@ -28,14 +29,11 @@
     .row
       .col-md-10.col-md-offset-1
         .row
-          .col-md-6.grid-item
-            .section-body
-              #{simple_format(@artist.bio)}
-          .col-md-6.grid-item
+          .col-md-12
             .row
               .col-md-12
                 .section-body
-                  %p= t('artists.has_been_played_at')
+                  %p.text-center= t('artists.has_been_played_at')
             - @artist.events.each do |event|
               .row
                 .col-md-12

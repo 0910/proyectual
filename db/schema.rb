@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207064800) do
+ActiveRecord::Schema.define(version: 20170210131038) do
+
+  create_table "about_translations", force: :cascade do |t|
+    t.integer  "about_id",    limit: 4,     null: false
+    t.string   "locale",      limit: 255,   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "short_about", limit: 65535
+    t.text     "long_about",  limit: 65535
+  end
+
+  add_index "about_translations", ["about_id"], name: "index_about_translations_on_about_id", using: :btree
+  add_index "about_translations", ["locale"], name: "index_about_translations_on_locale", using: :btree
+
+  create_table "abouts", force: :cascade do |t|
+    t.text     "short_about",        limit: 65535
+    t.text     "long_about",         limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "cover_file_name",    limit: 255
+    t.string   "cover_content_type", limit: 255
+    t.integer  "cover_file_size",    limit: 4
+    t.datetime "cover_updated_at"
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -59,7 +82,6 @@ ActiveRecord::Schema.define(version: 20170207064800) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name",             limit: 255
-    t.string   "website",          limit: 255
     t.string   "resident_advisor", limit: 255
     t.string   "facebook",         limit: 255
     t.string   "soundcloud",       limit: 255
@@ -157,6 +179,17 @@ ActiveRecord::Schema.define(version: 20170207064800) do
 
   add_index "news_translations", ["locale"], name: "index_news_translations_on_locale", using: :btree
   add_index "news_translations", ["news_id"], name: "index_news_translations_on_news_id", using: :btree
+
+  create_table "partners", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.string   "link",              limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "logo_file_name",    limit: 255
+    t.string   "logo_content_type", limit: 255
+    t.integer  "logo_file_size",    limit: 4
+    t.datetime "logo_updated_at"
+  end
 
   create_table "splashes", force: :cascade do |t|
     t.string   "title",              limit: 255

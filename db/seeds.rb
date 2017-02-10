@@ -8,3 +8,4 @@
 VideoCategory.create!(:name => 'Teaser')
 VideoCategory.create!(:name => 'Aftermovie')
 VideoCategory.create!(:name => 'Live')
+About.create!

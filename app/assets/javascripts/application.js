@@ -15,4 +15,5 @@
 //= require swiper.jquery
 //= require swipebox
 //= require jpreloader
+//= require masonry.pkgd.min
 //= require_tree .

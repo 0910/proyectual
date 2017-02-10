@@ -1,6 +1,6 @@
 ActiveAdmin.register Artist do
 
-  csv_importable :columns => [:name, :website, :facebook, :resident_advisor, :soundcloud], :import_unique_key => :code
+  csv_importable :columns => [:name, :facebook, :resident_advisor, :soundcloud], :import_unique_key => :code
 
   csv do
     column :name
@@ -26,7 +26,6 @@ ActiveAdmin.register Artist do
       row :name
       row :bio
       row :slug
-      row :website
       row :facebook
       row :resident_advisor
       row :soundcloud
@@ -43,7 +42,6 @@ ActiveAdmin.register Artist do
       f.semantic_errors
       f.input :name, :require => true
       f.input :bio
-      f.input :website
       f.input :facebook
       f.input :resident_advisor
       f.input :soundcloud

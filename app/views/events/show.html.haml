@@ -46,6 +46,7 @@
       .col-md-8.col-md-offset-2
         .video
           .video-cover{:style => "background-image: url(#{@event.video_cover.url(:large)})"}
+          = link_to('', @event.video, class: 'swipebox-video video-play')
           
 %section.bg-dark-grey.offset
   .container

@@ -25,9 +25,8 @@
     .row
       .col-md-8.col-md-offset-2
         .section-body.section-box-alt
-          %p
-            PROYECTUAL es un equipo de profesionales vinculados al mundo de la música electrónica, que lleva organizando eventos de alta convocatoria como productores, promotores y mánagers de clubs desde 2005.
-        = link_to(t('about.call_to_action'), about_index_path)
+          #{simple_format(@about.short_about)}
+        = link_to(t('about.call_to_action'), about_path)
 
 %section.grid.bg-dark-grey#news
   .container
@@ -86,6 +85,20 @@
     .row.text-center
       = link_to(t('news.view_all'), news_index_path, class: 'btn btn-green btn-sm')
 
+%section#partners.grid.text-center.bg-grey
+  .container
+    .row
+      .col-md-2.col-md-offset-5.hexagon
+        %h2.section-heading
+          Partners
+    .row
+      - @partners.each do |partner|
+        .col-xs-4.col-sm-3.col-md-3
+          = link_to(partner.link, class: 'partner') do
+            = image_tag(partner.logo.url)
+    .row
+      .col-md-2.col-md-offset-5.text-center
+        = link_to('', '#', class: 'gotop')
 :javascript
   $(document).ready(function(){
     var swiper = new Swiper('.carousel .swiper-container', {

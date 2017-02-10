@@ -1,5 +1,6 @@
 class AboutController < ApplicationController
-  def index
+  def show
+    @about = About.find(1)
     @events = Event.all
   end
 end
