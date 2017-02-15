@@ -29,9 +29,11 @@ ActiveAdmin.register News do
   form html: { multipart: true } do |f|
     f.inputs 'Details' do
       f.semantic_errors
-      f.input :title, :require => true
-      f.input :date
-      f.input :body
+      f.input :date, :as => :datepicker
+      f.translated_inputs 'ignored title', switch_locale: true, available_locales: I18n.available_locales do |t|
+        t.input :title, :require => true
+        t.input :body
+      end
     end
     f.inputs "Images" do
       f.has_many :images do |i|

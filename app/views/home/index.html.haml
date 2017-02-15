@@ -4,7 +4,7 @@
       .col-md-6.splash{:style => "background-image: url(#{splash.image.url(:large)})"}
         .caption
           .inner
-            %p #{splash.title}
+            %p #{splash.subtitle}
             = link_to(splash.link, class: 'btn btn-xl-noborder', target: '_blank') do
               .lines
                 .line.top
@@ -12,9 +12,9 @@
                 .line.bottom
                 .line.left
               %h1
-                #{splash.call_to_action}
+                #{splash.title}
             %p
-              #{splash.subtitle}
+              #{splash.call_to_action}
   .isologo.vcenter.visible-lg
 
 %section#about.grid.text-center.bg-grey

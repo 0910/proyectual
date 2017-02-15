@@ -2,18 +2,18 @@
   .container-fluid
     .row.no-gutter.splashes
       .col-md-12.header.text-center
-        %h1.section-heading.vcenter= t('artists.title')
         .gradient2
+        %h1.section-heading.vcenter= t('artists.title')
   .container.neg-margin
     .row.artists-grid
       .grid-sizer.col-xs-2.col-sm-4.col-md-3
       - @artists.keys.sort.each do |letter|
         .col-xs-12.col-sm-3.col-md-3.letter
           .row.subsection
-            .col-md-2.hexagon.text-center
+            .col-md-2.col-md-offset-5.hexagon.text-center
               %h2.section-heading= letter
           - @artists[letter].each do |artist|
-            .row
+            .row.text-center
               = link_to(artist) do
                 %p= artist.name
 :javascript

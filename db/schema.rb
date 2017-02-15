@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210131038) do
+ActiveRecord::Schema.define(version: 20170214115712) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",    limit: 4,     null: false
@@ -136,6 +136,9 @@ ActiveRecord::Schema.define(version: 20170210131038) do
     t.string   "video_cover_content_type", limit: 255
     t.integer  "video_cover_file_size",    limit: 4
     t.datetime "video_cover_updated_at"
+    t.string   "youtube",                  limit: 255
+    t.string   "instagram",                limit: 255
+    t.string   "twitter",                  limit: 255
   end
 
   create_table "images", force: :cascade do |t|
@@ -190,6 +193,19 @@ ActiveRecord::Schema.define(version: 20170210131038) do
     t.integer  "logo_file_size",    limit: 4
     t.datetime "logo_updated_at"
   end
+
+  create_table "splash_translations", force: :cascade do |t|
+    t.integer  "splash_id",      limit: 4,   null: false
+    t.string   "locale",         limit: 255, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "title",          limit: 255
+    t.string   "subtitle",       limit: 255
+    t.string   "call_to_action", limit: 255
+  end
+
+  add_index "splash_translations", ["locale"], name: "index_splash_translations_on_locale", using: :btree
+  add_index "splash_translations", ["splash_id"], name: "index_splash_translations_on_splash_id", using: :btree
 
   create_table "splashes", force: :cascade do |t|
     t.string   "title",              limit: 255

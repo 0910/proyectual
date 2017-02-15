@@ -7,6 +7,7 @@
       = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
       = javascript_include_tag 'application', 'data-turbolinks-track' => true
       = csrf_meta_tags
+      = display_meta_tags
       = yield(:head)
 
   %body{:class => "#{controller_name} #{action_name}"}
@@ -21,7 +22,7 @@
               = link_to(home_path, class: 'logo') do
                 = image_tag('logo.svg')
             .col-md-6.visible-lg
-              %ul.list-inline.social-buttons-nav.pull-right
+              %ul.list-inline.social-buttons-nav.pull-right.icons
                 %li
                   %p= t('nav.follow')
                 %li
@@ -59,31 +60,30 @@
                   = link_to change_locale_path(:ca) do
                     %p CAT
             .col-md-6.visible-lg
-              = link_to(t('nav.stay_updated'), "http://www.residentadvisor.net/promoter.aspx?id=19688", class: 'btn btn-nav btn-sm pull-right')
+              = link_to(t('nav.stay_updated'), '#',  class: 'btn btn-nav btn-sm pull-right subscribe-button')
 	
     .menu
       .menu-inner
         .container
-          .col-md-4.col-md-offset-2
-            = link_to(t('menu.home'), home_path)
-            = link_to(t('menu.events'), events_path)
-            = link_to(t('menu.news'), news_index_path)
-            = link_to(t('menu.artists'), artists_path)
-            = link_to(t('menu.about'), about_path)
-          .col-md-4.hidden-xs
-            %p
-              Roc Boronat 24, 3-2
-              %br
-              Barcelona
-              %br
-              Spain
-              %br
-              -
-              %br
-              T 601 271 668
-              %br
-              about@proyectual.info
-
+          .col-md-12
+            .menu--shylock
+              %ul.menu__list
+                %li.menu__item
+                  = link_to(t('menu.home'), home_path, class: 'menu__link')
+                %li.menu__item
+                  = link_to(t('menu.events'), events_path, class: 'menu__link')
+                %li.menu__item
+                  = link_to(t('menu.news'), news_index_path, class: 'menu__link')
+                %li.menu__item
+                  = link_to(t('menu.artists'), artists_path, class: 'menu__link')
+                %li.menu__item
+                  = link_to(t('menu.about'), about_path, class: 'menu__link')
+      %p.text-bottom
+        Roc Boronat 24, 3-2, Barcelona, Spain / T 601 271 668 / about@proyectual.info
+    .subscribe
+      .vcenter
+        .row
+          = render :partial => 'emailapi/subscribe'
     = yield
     %footer.no-gutter
       .container-fluid
@@ -120,18 +120,15 @@
                   %i.fa.fa-youtube
 
 :javascript
-  $('.c-hamburger').click(function(){
-    $(this).toggleClass('is-active');
-    $('.menu').toggleClass('active').fadeToggle("slow", "linear");
-    if($(window).scrollTop() > 100){
-      $('nav').toggleClass('shrink');
-    }
+  $('.c-hamburger, .menu').click(function(){
+    nav();
   });
-  $('.menu').click(function(){
-    $(this).toggleClass('active').fadeToggle("slow", "linear");
-    if($(window).scrollTop() > 100){
-      $('nav').toggleClass('shrink');
+  $('.subscribe, .subscribe-button').click(function(){
+    if($('.menu').hasClass('active')){
+      $('.c-hamburger').removeClass('is-active');
+      $('.menu').removeClass('active');
     }
+    $('.subscribe').toggleClass('active');
   });
   $('body').jpreLoader({
     loaderVPos: '0%',
@@ -161,7 +158,16 @@
     hideBarsDelay : 3000, // delay before hiding bars on desktop
     videoMaxWidth : 1140, // videos max width
     beforeOpen: function() {}, // called before opening
-    afterOpen: null, // called after opening
+    afterOpen: function() {}, // called after opening
     afterClose: function() {}, // called after closing
-    loopAtEnd: false // true will return to the first image after the last image is reached
+    loopAtEnd: false, // true will return to the first image after the last image is reached
+    autoplayVideos: true
   });
+
+  function nav(){
+    $('.c-hamburger').toggleClass('is-active');
+    $('.menu').toggleClass('active');
+    if($(window).scrollTop() > 100){
+      $('nav').toggleClass('shrink');
+    }
+  }

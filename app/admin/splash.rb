@@ -18,9 +18,11 @@ index do
   form html: { multipart: true } do |f|
     f.inputs 'Details' do
       f.semantic_errors
-      f.input :title, :require => true
-      f.input :subtitle
-      f.input :call_to_action
+      f.translated_inputs 'ignored title', switch_locale: true, available_locales: I18n.available_locales do |t|
+        t.input :title, :require => true
+        t.input :subtitle
+        t.input :call_to_action
+      end
       f.input :link
     end
     f.inputs "Image" do

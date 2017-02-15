@@ -22,9 +22,10 @@ ActiveAdmin.register Event do
       row :year
       row :subtitle
       row :description
-      row :website
       row :facebook
-      row :resident_advisor
+      row :instagram
+      row :twitter
+      row :youtube
       row :video
       row :featured
       row :artists do 
@@ -55,9 +56,10 @@ ActiveAdmin.register Event do
       f.translated_inputs 'ignored title', switch_locale: true, available_locales: I18n.available_locales do |t|
         t.input :description
       end
-      f.input :website
       f.input :facebook
-      f.input :resident_advisor
+      f.input :instagram
+      f.input :twitter
+      f.input :youtube
       f.input :video
       f.input :video_cover, :as => :file, label: 'Video Cover', hint: f.object.new_record? ? f.template.content_tag(:span, "No Image Yet") : image_tag(f.object.video_cover.url(:thumb))
       f.input :artists, :as => :select, :collection => Artist.all, :include_blank => false, :require => true, :multiple => true

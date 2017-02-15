@@ -42,6 +42,8 @@ gem 'active_admin_csv_import'
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 gem 'globalize', '~> 5.0.0'
 gem 'activeadmin-globalize', '~> 1.0.0.pre', github: 'fabn/activeadmin-globalize', branch: 'develop'
+gem 'gibbon', '~> 2.2', '>= 2.2.4'
+gem 'meta-tags'
 
 group :development do
     gem 'capistrano'

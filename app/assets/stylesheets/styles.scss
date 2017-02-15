@@ -1544,6 +1544,17 @@ body.events.show{
     padding: 0 20px 20px;
   }
 }
+@media (min-width: 992px) {
+  header{
+    height: 100%;
+    .splashes{
+      height: 100%;
+      .splash{
+        height: 100%;
+      }
+    }
+  }
+}
 @media (min-width: 1200px) {
   body{
     font-size: 11px;
@@ -1568,15 +1579,6 @@ body.events.show{
   .timeline > li:nth-child(even) > .timeline-panel {
     padding: 0 100px 20px 20px;
   }
-  header{
-    height: 100%;
-    .splashes{
-      height: 100%;
-      .splash{
-        height: 100%;
-      }
-    }
-  }
   body.show{
     .grid-item:first-child{
       float: left;
@@ -1599,3 +1601,33 @@ body.events.show{
     font-size: 13px;
   }
 }
+
+/* Forms */
+form{
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  h2{
+   color: #5bc6d0; 
+  }
+}
+label{
+  color: #fff;
+  font-weight: normal !important;
+}
+.form-control{
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #909090;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #909090;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+

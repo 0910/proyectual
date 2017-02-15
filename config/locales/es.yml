@@ -63,3 +63,8 @@ es:
     about: "Acerca"
     media: "Media"
     has_been_played_at: "Ha tocado en:"
+  subscribe:
+    title: "Subscríbete para mantenerte conectado"
+    name: "Nombre:"
+    lastname: "Apellido:"
+    submit: "Subscribirme!"
