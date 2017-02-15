@@ -19,6 +19,5 @@ class HomeController < ApplicationController
     render 'index'
   end
   def index
-    redirect_to "https://www.facebook.com/proyectual"
   end
 end

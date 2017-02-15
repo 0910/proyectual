@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   get '/:locale' => 'home#v2'
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
-  root 'home#index'
+  root 'home#soon'
   post 'emailapi/subscribe' => 'emailapi#subscribe'
 end
