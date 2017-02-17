@@ -63,7 +63,7 @@ en:
     media: "Media"
     has_been_played_at: "Has been played at:"
   subscribe:
-    title: "Subscribe to stay updated"
+    title: "We will send you the most important news about Proyectual"
     name: "Name:"
     lastname: "Lastname:"
     submit: "Subscribe!"

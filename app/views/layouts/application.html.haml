@@ -6,6 +6,7 @@
         Proyectual
       = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
       = javascript_include_tag 'application', 'data-turbolinks-track' => true
+      = favicon_link_tag 'favicon.ico'
       = csrf_meta_tags
       = display_meta_tags
       = yield(:head)
@@ -17,7 +18,7 @@
           .col-xs-6.box.visible-xs
             = link_to(home_path, class: 'logo') do
               = image_tag('logo.svg')
-          .col-xs-6.col-sm-6.col-md-6.col-lg-5.box.hidden-xs
+          .col-xs-6.col-sm-6.col-md-4.col-lg-5.box.hidden-xs
             .col-xs-9.col-sm-6.col-md-6
               = link_to(home_path, class: 'logo') do
                 = image_tag('logo.svg')
@@ -39,12 +40,12 @@
                 %li
                   = link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
                     %i.fa.fa-youtube
-          .col-xs-6.col-sm-6.col-md-6.col-lg-2.box.text-center
+          .col-xs-6.col-sm-6.col-md-4.col-lg-2.box.text-center
             %button.c-hamburger.c-hamburger--htx
               %span
                 toggle menu
-          .col-xs-12.col-sm-6.col-md-5.box.visible-lg
-            .col-md-6
+          .col-xs-12.col-sm-6.col-md-4.col-lg-5.box.hidden-xs
+            .col-md-12.col-lg-6
               %ul.list-inline.social-buttons-nav
                 %li
                   %p= t('nav.lang')

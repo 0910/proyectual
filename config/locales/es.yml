@@ -28,14 +28,14 @@ es:
     powered_by: "Powered by Noise - www.wemakenoise.co"
   nav:
     follow: "SEGUIR"
-    stay_updated: "Mantente Conectado"
+    stay_updated: "Mantente Informado"
     lang: "IDIOMA"
   menu:
     home: "Home"
     events: "Eventos"
     news: "Noticias"
     artists: "Artistas"
-    about: "Acerca"
+    about: "Historia"
   about:
     title: "Nosotros"
     short_about: ""
@@ -60,11 +60,11 @@ es:
     artists_who_played: "Artistas que han tocado"
   artists:
     title: "artistas"
-    about: "Acerca"
+    about: "Historia"
     media: "Media"
     has_been_played_at: "Ha tocado en:"
   subscribe:
-    title: "Subscríbete para mantenerte conectado"
+    title: "Te enviaremos las novedades más importantes sobre Proyectual"
     name: "Nombre:"
     lastname: "Apellido:"
     submit: "Subscribirme!"

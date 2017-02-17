@@ -58,7 +58,6 @@ nav{
         margin: 5px 0;
     }
 }
-
 .c-hamburger {
   display: inline-block;
   position: relative;
@@ -168,6 +167,9 @@ nav{
   -webkit-transition-delay: 0s, 0.3s;
           transition-delay: 0s, 0.3s;
 }
+ul.social-buttons-nav {
+  float:right;
+}
 ul.social-buttons-nav li a {
     display: block;
     font-size: 1em;
@@ -180,8 +182,8 @@ ul.social-buttons-nav li a {
 }
 ul.social-buttons-nav.icons li a {
   display: block;
-  font-size: 1.25em;
-  line-height: 2.45em;
+  font-size: 1.4em;
+  line-height: 1.45em;
 }
 ul.social-buttons-nav li a:hover,
 ul.social-buttons-nav li a:focus,
@@ -301,6 +303,9 @@ ul.social-buttons-nav li a {
   color: #fff;
 }
 @media (min-width:768px){
+  .c-hamburger {
+    float: none;
+  }
   nav{
     position: fixed;
     background-color: transparent;
@@ -314,8 +319,8 @@ ul.social-buttons-nav li a {
   }
 }
 @media (min-width:1200px){
-  .c-hamburger {
-    float: none;
+  ul.social-buttons-nav {
+    float:left;
   }
 }
 .subscribe{

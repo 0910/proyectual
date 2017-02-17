@@ -2,8 +2,9 @@ class ArtistsController < ApplicationController
   def index
     @about = About.find(1)
     @artists = {}
-    Artist.all.each do |artist|
-      letter = artist.name.slice(0,1).upcase
+    @sorted = Artist.all
+    @sorted.each do |artist|
+      letter = artist.name.slice(0,1).upcase.gsub(/[áàâãä]/,'a').gsub(/[ÁÀÂÃÄ]/,'A')
       @artists[letter] ||= []
       @artists[letter] << artist 
     end
