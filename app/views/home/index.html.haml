@@ -93,9 +93,8 @@
           Partners
     .row
       - @partners.each do |partner|
-        .col-xs-4.col-sm-3.col-md-3
-          = link_to(partner.link, class: 'partner') do
-            = image_tag(partner.logo.url)
+        = link_to(partner.link, class: 'partner') do
+          = image_tag(partner.logo.url)
     .row
       .col-md-2.col-md-offset-5.text-center
         = link_to('', '#', class: 'gotop')

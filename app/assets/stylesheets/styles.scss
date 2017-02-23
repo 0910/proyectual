@@ -103,6 +103,12 @@ a.partner{
   transition: all ease .5s;
   -webkit-transition: all ease .5s;
   -moz-transition: all ease .5s;
+  margin: 15px 0px;
+  img{
+    width: 90px;
+    height: auto;
+    margin: 15px 30px;
+  }
 }
 a.partner:hover{
   opacity: 0.5;
