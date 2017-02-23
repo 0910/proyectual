@@ -62,7 +62,30 @@
                     %p CAT
             .col-md-6.visible-lg
               = link_to(t('nav.stay_updated'), '#',  class: 'btn btn-nav btn-sm pull-right subscribe-button')
+
 	
+    .bottom-nav.visible-md.hidden-lg
+      .row
+        .col-md-6
+          %ul.list-inline.social-buttons-nav.icons
+            %li
+              %p= t('nav.follow')
+            %li
+              .hline
+            %li
+              = link_to "http://www.facebook.com/proyectual", :target => '_blank' do
+                %i.fa.fa-facebook
+            %li
+              = link_to "https://www.instagram.com/proyectualbcn", :target => '_blank' do
+                %i.fa.fa-instagram
+            %li
+              = link_to "https://twitter.com/proyectualbcn", :target => '_blank' do
+                %i.fa.fa-twitter
+            %li
+              = link_to "https://www.youtube.com/user/proyectualtv", :target => '_blank' do
+                %i.fa.fa-youtube
+        .col-md-6
+          = link_to(t('nav.stay_updated'), '#',  class: 'btn btn-nav btn-sm pull-right subscribe-button')
     .menu
       .menu-inner
         .container

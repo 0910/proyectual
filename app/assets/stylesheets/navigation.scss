@@ -35,25 +35,6 @@ nav{
     .btn{
         margin-top: 7px;
     }
-    .btn-nav {
-      color: #000;
-      background-color: transparent;
-      border:2px solid #000;
-      text-transform: uppercase;
-      border-radius: 0px;
-      font-weight: 700;
-      letter-spacing: .5px;
-    }
-
-    .btn-nav:hover,
-    .btn-nav:focus,
-    .btn-nav:active,
-    .btn-nav.active,
-    .open .dropdown-toggle.btn-nav {
-        color: #fff;
-        background-color: #000;
-        border-color: #000;
-    }
     .list-inline{
         margin: 5px 0;
     }
@@ -202,8 +183,27 @@ ul.social-buttons-nav p{
   font-size: 1em;
   line-height: 3em;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
+.subscribe-button {
+  color: #fff;
+  background-color: transparent;
+  border:2px solid #fff;
+  text-transform: uppercase;
+  border-radius: 0px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.subscribe-button:hover,
+.subscribe-button:focus,
+.subscribe-button:active,
+.subscribe-button.active {
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
+}
 .menu-inner{
     position: relative;
     top: 50%;
@@ -299,6 +299,28 @@ nav.shrink{
     }
   }
 }
+
+.bottom-nav{
+  background: -moz-linear-gradient(top,  rgba(24,26,27,0) 0%, rgba(24,26,27,1) 98%, rgba(24,26,27,1)
+  100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(24,26,27,0) 0%,rgba(24,26,27,1) 98%,rgba(24,26,27,1)
+  100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(24,26,27,0) 0%,rgba(24,26,27,1) 98%,rgba(24,26,27,1)
+  100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00181a1b',
+  endColorstr='#181a1b',GradientType=0 ); /* IE6-9 */
+
+  position: fixed;
+  z-index: 1032;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 45px;
+  ul.social-buttons-nav {
+    float:left !important;
+  }
+}
+
 ul.social-buttons-nav li a {
   color: #fff;
 }

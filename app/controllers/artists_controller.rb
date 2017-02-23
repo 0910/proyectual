@@ -26,13 +26,13 @@ class ArtistsController < ApplicationController
     @events = Event.joins(:event_artists).where(:event_artists => {:artist_id => @artist})
     set_meta_tags(
       title: "Proyetual - #{@artist.name}",
-      description: @artist.body,
+      description: @artist.bio,
       keywords: "festivals, barcelona, festivales, house, disco, techno, open, air, day, events",
       og: {
         title: "Proyetual - #{@artist.name}",
         type:'website',
         url: "www.proyectual.info",
-        description: @artist.body 
+        description: @artist.bio 
       }
     )
   end

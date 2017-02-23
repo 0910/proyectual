@@ -13,5 +13,6 @@ ActiveAdmin.register About do
       end
       f.input :cover, :as => :file, label: 'Cover', hint: f.object.new_record? ? f.template.content_tag(:span, "No Image Yet") : image_tag(f.object.cover.url(:thumb))
    end
+  f.actions
   end
 end
