@@ -23,7 +23,50 @@
 ca:
   active_admin:
     dashboard_welcome:
-      welcome: "Welcome to Nueve Diez. This is the default dashboard page."
+      welcome: "Welcome to Proyectual."
       call_to_action: "This product is under development."
-    powered_by: "Powered by Nueve Diez - www.nuevediez.com"
-
+    powered_by: "Powered by Noise - www.wemakenoise.co"
+  nav:
+    follow: "SEGUIR"
+    stay_updated: "Estigues Informat"
+    lang: "Idioma"
+  menu:
+    home: "Home"
+    events: "Esdeveniments"
+    news: "Notícies"
+    artists: "Artistes"
+    about: "História"
+    address: "Roc Boronat 24, 3-2, Barcelona, Espanya / T 601 271 668 / about@proyectual.info"
+  about:
+    title: "Coneixens"
+    short_about: ""
+    call_to_action: "Get to know us"
+    large_info1: ""
+    large_info2: ""
+    large_info3: ""
+    introduction: "Introduction"
+    facts: "Facts"
+  news:
+    title: "Noticies"
+    view_all: "Veure totes les noticies"
+    read_more: "Read More"
+    all: "All"
+    share: "SHARE"
+  events:
+    title: "Events"
+    view_more: "View More"
+    about_this_event: "About this Event"
+    after_movie: "Aftermovie"
+    event_history: "Event History"
+    artists_who_played: "Artists who played"
+  artists:
+    title: "artists"
+    about: "About"
+    media: "Media"
+    has_been_played_at: "Has been played at:"
+  subscribe:
+    title: "Et farem arribar les nostres novetats mes importants"
+    name: "Nom i cognom:"
+    lastname: "Cognom:"
+    submit: "Suscriure!"
+  sponsors: "Hem treballat amb"

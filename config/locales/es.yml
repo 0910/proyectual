@@ -36,6 +36,7 @@ es:
     news: "Noticias"
     artists: "Artistas"
     about: "Historia"
+    address: "Roc Boronat 24, 3-2, Barcelona, España / T 601 271 668 / about@proyectual.info"
   about:
     title: "Nosotros"
     short_about: ""
@@ -64,7 +65,7 @@ es:
     media: "Media"
     has_been_played_at: "Ha tocado en:"
   subscribe:
-    title: "Te enviaremos las novedades más importantes sobre Proyectual"
-    name: "Nombre:"
+    title: "Te enviaremos nuestras novedades más importantes"
+    name: "Nombre y apellido:"
     lastname: "Apellido:"
     submit: "Subscribirme!"

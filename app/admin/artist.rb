@@ -14,6 +14,11 @@ ActiveAdmin.register Artist do
       scoped_collection.friendly.find(params[:id])
     end
   end 
+
+  action_item only: :show do
+    link_to 'New Artist', new_admin_artist_path
+  end
+
   index do
     column :id
     column :name

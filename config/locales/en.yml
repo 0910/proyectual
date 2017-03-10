@@ -28,13 +28,14 @@ en:
   nav:
     follow: "FOLLOW"
     stay_updated: "Stay Updated"
-    lang: "Lang"
+    lang: "Language"
   menu:
     home: "Home"
     events: "Events"
     news: "News"
     artists: "Artists"
     about: "About"
+    address: "Roc Boronat 24, 3-2, Barcelona, Spain / T 601 271 668 / about@proyectual.info"
   about:
     title: "About"
     short_about: ""
@@ -63,7 +64,8 @@ en:
     media: "Media"
     has_been_played_at: "Has been played at:"
   subscribe:
-    title: "We will send you the most important news about Proyectual"
-    name: "Name:"
+    title: "We will send you our top updates"
+    name: "Name & lastname:"
     lastname: "Lastname:"
     submit: "Subscribe!"
+  sponsors: "Worked with"

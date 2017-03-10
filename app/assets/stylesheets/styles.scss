@@ -508,6 +508,13 @@ header{
     width: 100%;
   }
   .splash{
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
     height: 50%;
     .caption{
       width:100%;
@@ -557,7 +564,7 @@ section h1.section-heading {
 section h2.section-heading {
     font-size: 1em;
     color: #fff;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     font-weight: 300;
     text-transform: uppercase;
     margin-left: 3px;

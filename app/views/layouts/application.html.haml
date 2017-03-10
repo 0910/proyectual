@@ -56,7 +56,7 @@
                     %p ENG
                 %li
                   = link_to change_locale_path(:es) do
-                    %p ESP
+                    %p ES
                 %li
                   = link_to change_locale_path(:ca) do
                     %p CAT
@@ -103,7 +103,7 @@
                 %li.menu__item
                   = link_to(t('menu.about'), about_path, class: 'menu__link')
       %p.text-bottom
-        Roc Boronat 24, 3-2, Barcelona, Spain / T 601 271 668 / about@proyectual.info
+        = t('menu.address')
     .subscribe
       .vcenter
         .row

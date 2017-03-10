@@ -26,7 +26,7 @@
       .col-md-8.col-md-offset-2
         .section-body.section-box-alt
           #{simple_format(@about.short_about)}
-        = link_to(t('about.call_to_action'), about_path)
+        = link_to(t('about.call_to_action'), about_path, class: "btn btn-sm btn-white")
 
 %section.grid.bg-dark-grey#news
   .container
@@ -90,7 +90,7 @@
     .row
       .col-md-2.col-md-offset-5.hexagon
         %h2.section-heading
-          Partners
+          = t('sponsors')
     .row
       - @partners.each do |partner|
         = link_to(partner.link, class: 'partner') do

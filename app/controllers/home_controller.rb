@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def v2
     @about = About.find(1)
   	@news = News.last(2)
-  	@splashes = Splash.all
+  	@splashes = Splash.all.order(id: :desc)
   	@partners = Partner.all
   	@events = Event.where(featured: 'Yes')
     set_meta_tags(
