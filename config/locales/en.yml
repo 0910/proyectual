@@ -64,8 +64,8 @@ en:
     media: "Media"
     has_been_played_at: "Has been played at:"
   subscribe:
-    title: "We will send you our top updates"
-    name: "Name & lastname:"
+    title: "We will send you our latest news and updates"
+    name: "Name and Surname:"
     lastname: "Lastname:"
-    submit: "Subscribe!"
+    submit: "SUBSCRIBE!"
   sponsors: "Worked with"
