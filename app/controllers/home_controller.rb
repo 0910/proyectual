@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def v2
+  def index
     @about = About.find(1)
   	@news = News.last(2)
   	@splashes = Splash.all.order(id: :desc)
@@ -16,8 +16,5 @@ class HomeController < ApplicationController
         description: @about.short_about 
       }
     )
-    render 'index'
-  end
-  def index
   end
 end

@@ -16,11 +16,11 @@
       .container
         .no-gutter
           .col-xs-6.box.visible-xs
-            = link_to(home_path, class: 'logo') do
+            = link_to(root_path, class: 'logo') do
               = image_tag('logo.svg')
           .col-xs-6.col-sm-6.col-md-4.col-lg-5.box.hidden-xs
             .col-xs-9.col-sm-6.col-md-6
-              = link_to(home_path, class: 'logo') do
+              = link_to(root_path, class: 'logo') do
                 = image_tag('logo.svg')
             .col-md-6.visible-lg
               %ul.list-inline.social-buttons-nav.pull-right.icons
@@ -93,7 +93,7 @@
             .menu--shylock
               %ul.menu__list
                 %li.menu__item
-                  = link_to(t('menu.home'), home_path, class: 'menu__link')
+                  = link_to(t('menu.home'), root_path, class: 'menu__link')
                 %li.menu__item
                   = link_to(t('menu.events'), events_path, class: 'menu__link')
                 %li.menu__item
@@ -114,7 +114,7 @@
         .row
           .col-md-6.col-md-offset-3.text-left.footmenu.text-center
             .row
-              = link_to(t('menu.home'), home_path)
+              = link_to(t('menu.home'), root_path)
               = link_to(t('menu.events'), events_path)
               = link_to(t('menu.news'), news_index_path)
               = link_to(t('menu.artists'), artists_path)
