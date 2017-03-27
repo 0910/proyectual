@@ -88,13 +88,14 @@
 %section#partners.grid.text-center.bg-grey
   .container
     .row
-      .col-md-2.col-md-offset-5.hexagon
+      .col-md-2.col-md-offset-5
         %h2.section-heading
           = t('sponsors')
     .row
-      - @partners.each do |partner|
-        = link_to(partner.link, class: 'partner') do
-          = image_tag(partner.logo.url)
+      .col-md-10.col-md-offset-1
+        - @partners.each do |partner|
+          = link_to(partner.link, class: 'partner') do
+            = image_tag(partner.logo.url)
     .row
       .col-md-2.col-md-offset-5.text-center
         = link_to('', '#', class: 'gotop')
