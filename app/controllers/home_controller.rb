@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     @about = About.find(1)
-  	@news = News.all.order(date: :desc).last(2)
+  	@news = News.all.order(date: :desc).first(2)
   	@splashes = Splash.all.order(id: :desc)
   	@partners = Partner.all
   	@events = Event.where(featured: 'Yes').order(year: :desc)
