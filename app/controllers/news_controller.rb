@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   def index
     @about = About.find(1)
-    @news = News.all
+  	@news = News.all.order(date: :desc)
     set_meta_tags(
       title: "Proyetual",
       description: @about.short_about,

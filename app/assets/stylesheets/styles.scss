@@ -771,7 +771,26 @@ section .section-box-double{
 }
 
 /* About */
-
+section#about{
+  .header{
+    height: 480px;
+    text-transform: uppercase;
+    .vcenter{
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); 
+    }
+    .ph{
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.5;
+    }
+  }
+}
 body.home{
   section#about{
     padding: 60px 0;
@@ -802,9 +821,6 @@ body.home{
   }
 }
 body.about{
-  .header{
-    background-image: image-url('about.jpg');
-  }
   section#about{
     .subsection:first-child .hexagon{
       margin-top: -90px;

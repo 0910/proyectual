@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   def index
     @about = About.find(1)
-  	@years = Year.all
-    @events = Event.all
+  	@years = Year.all.order(name: :desc)
+  	@events = Event.all.order(year: :desc)
     set_meta_tags(
       title: "Proyetual",
       description: @about.short_about,
