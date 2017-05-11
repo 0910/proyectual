@@ -1,7 +1,7 @@
 %header
   .no-gutter.splashes
     - @splashes.each do |splash|
-      .col-md-6.splash{:style => "background-image: url(#{splash.image.url(:large)})"}
+      .col-md-4.splash{:style => "background-image: url(#{splash.image.url(:large)})"}
         .caption
           .inner
             %p #{splash.subtitle}
@@ -15,7 +15,6 @@
                 #{splash.title}
             %p
               #{splash.call_to_action}
-  .isologo.vcenter.visible-lg
 
 %section#about.grid.text-center.bg-grey
   .container-fluid
