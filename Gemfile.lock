@@ -309,6 +309,7 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
   activeadmin-globalize (~> 1.0.0.pre)!
   activeadmin-select2!
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.5)
   bxslider-rails
   byebug
